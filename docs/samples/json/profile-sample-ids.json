@@ -1,0 +1,406 @@
+{
+  "method": "fnv1a(id) ascending over api.tgif.network/dmr/talkgroups/json, first 100",
+  "count": 100,
+  "sample": [
+    {
+      "id": "51504",
+      "name": "Bicol Homebrewer Amateur Radio"
+    },
+    {
+      "id": "1155",
+      "name": "K4NCU Link System"
+    },
+    {
+      "id": "311293",
+      "name": "Darksiders"
+    },
+    {
+      "id": "22556",
+      "name": "Stafford Virginia"
+    },
+    {
+      "id": "20620",
+      "name": "BELGIUM RAGCHEW"
+    },
+    {
+      "id": "22200",
+      "name": "HBLink Italy"
+    },
+    {
+      "id": "75309",
+      "name": "Arkansas Radio Heads"
+    },
+    {
+      "id": "5973",
+      "name": "CARC"
+    },
+    {
+      "id": "32665",
+      "name": "USA Wide"
+    },
+    {
+      "id": "51529",
+      "name": "TGIF ORMIN"
+    },
+    {
+      "id": "51535",
+      "name": "District 3 Philippines"
+    },
+    {
+      "id": "51505",
+      "name": "DX1FLR"
+    },
+    {
+      "id": "33725",
+      "name": "Caguax Radio Club"
+    },
+    {
+      "id": "314059",
+      "name": "W4WEB Repeater Port Saint Joe, FL"
+    },
+    {
+      "id": "52525",
+      "name": "Pinoy@SG"
+    },
+    {
+      "id": "8420",
+      "name": " Baked Hams "
+    },
+    {
+      "id": "9998",
+      "name": "Breaking News"
+    },
+    {
+      "id": "44775",
+      "name": "Madison DX Club"
+    },
+    {
+      "id": "40060",
+      "name": "SOBER HAMS"
+    },
+    {
+      "id": "49684",
+      "name": "Traverse City Michigan Northern Michigan"
+    },
+    {
+      "id": "31570",
+      "name": "Bald Rock Amateur Radio Club"
+    },
+    {
+      "id": "51502",
+      "name": "Cavite Amateur Communication Enthusiasts"
+    },
+    {
+      "id": "51550",
+      "name": "Saipan Amateur Radio Club"
+    },
+    {
+      "id": "27948",
+      "name": "The Batcave"
+    },
+    {
+      "id": "71601",
+      "name": "Western NY "
+    },
+    {
+      "id": "34377",
+      "name": "Hazmat Response Members"
+    },
+    {
+      "id": "5304",
+      "name": "MIRATS: Michigan Radio Amateurs Technological Society "
+    },
+    {
+      "id": "73411",
+      "name": "RED DIGITAL YV2CM"
+    },
+    {
+      "id": "85000",
+      "name": "Ham Link ARC"
+    },
+    {
+      "id": "9969",
+      "name": "TG9969"
+    },
+    {
+      "id": "4261",
+      "name": "MUD POND"
+    },
+    {
+      "id": "28659",
+      "name": "TEKIRDAG"
+    },
+    {
+      "id": "4291",
+      "name": "Law Enforcement Officers World Wide"
+    },
+    {
+      "id": "9999",
+      "name": "M8KBZ"
+    },
+    {
+      "id": "44758",
+      "name": "JAPAN 758"
+    },
+    {
+      "id": "2863140",
+      "name": "TURKTALK"
+    },
+    {
+      "id": "3219966",
+      "name": "WS3BOB"
+    },
+    {
+      "id": "4419",
+      "name": "West Texas Yacht Club"
+    },
+    {
+      "id": "4499",
+      "name": "K0LNY"
+    },
+    {
+      "id": "51503",
+      "name": "DX3OC ORACLE"
+    },
+    {
+      "id": "71600",
+      "name": "Western NY "
+    },
+    {
+      "id": "85001",
+      "name": "Ham Link ARC - II"
+    },
+    {
+      "id": "50281",
+      "name": "Wells Beach Digital Wave"
+    },
+    {
+      "id": "46550",
+      "name": "Ham Frends Chat"
+    },
+    {
+      "id": "30813",
+      "name": "Grovetown Ga"
+    },
+    {
+      "id": "3216059",
+      "name": "N8ZVZ"
+    },
+    {
+      "id": "51500",
+      "name": "MOARC (DX8WMG)"
+    },
+    {
+      "id": "9229",
+      "name": "Makiling"
+    },
+    {
+      "id": "3205767",
+      "name": "IACONO6"
+    },
+    {
+      "id": "21756",
+      "name": "TACLINK-OPS"
+    },
+    {
+      "id": "20612",
+      "name": "BELGIUM WAASLAND"
+    },
+    {
+      "id": "234009",
+      "name": "GB7GW - Link"
+    },
+    {
+      "id": "51501",
+      "name": "DX1PUP"
+    },
+    {
+      "id": "53715",
+      "name": "KD4UFD Shack East TN Skywarn D5"
+    },
+    {
+      "id": "6041",
+      "name": "Cross Mode DMR TO ANALOGUE"
+    },
+    {
+      "id": "231401",
+      "name": "OM0ODM local"
+    },
+    {
+      "id": "3159588",
+      "name": "K4LCD"
+    },
+    {
+      "id": "50134",
+      "name": "I.B.E.W. Local134 retired"
+    },
+    {
+      "id": "32682",
+      "name": "KE5MS Group"
+    },
+    {
+      "id": "3130413",
+      "name": "KD5PQJ DMR Data"
+    },
+    {
+      "id": "11676",
+      "name": "W3CEC - Chat"
+    },
+    {
+      "id": "26429",
+      "name": "DL-Nordwest"
+    },
+    {
+      "id": "73465",
+      "name": "Grupo de Radio Ayuda Miranda  *GRAMI*"
+    },
+    {
+      "id": "25627",
+      "name": "Krasnodar"
+    },
+    {
+      "id": "638",
+      "name": "WP4QPP-PR"
+    },
+    {
+      "id": "13739",
+      "name": "WV ELKINS DMR 24-7 Chatgroup"
+    },
+    {
+      "id": "7272",
+      "name": "The 72 Chew (Daily 9AM-12PM/ET 40M on 7272)"
+    },
+    {
+      "id": "702",
+      "name": "702"
+    },
+    {
+      "id": "3824",
+      "name": "Vanilla TG"
+    },
+    {
+      "id": "92952",
+      "name": "Venom"
+    },
+    {
+      "id": "28054",
+      "name": "Kansas City Wide"
+    },
+    {
+      "id": "1138",
+      "name": "Resistance Radio"
+    },
+    {
+      "id": "50853",
+      "name": "KE8LCM AllStar Bridge NODE 508530"
+    },
+    {
+      "id": "26444",
+      "name": "Inselfreunde"
+    },
+    {
+      "id": "73464",
+      "name": "Instituto Autónomo de Protección Civil y Administración de Desastres Municipio Miranda"
+    },
+    {
+      "id": "82332",
+      "name": "SupaDupa"
+    },
+    {
+      "id": "7205",
+      "name": "Union County NJ Alumni"
+    },
+    {
+      "id": "25702",
+      "name": "KOW Tristate Area"
+    },
+    {
+      "id": "78850",
+      "name": "Iw6ntw"
+    },
+    {
+      "id": "3188172",
+      "name": "SMARC Washington"
+    },
+    {
+      "id": "2754",
+      "name": "Churchill"
+    },
+    {
+      "id": "31201",
+      "name": "BYRG Chat"
+    },
+    {
+      "id": "9993",
+      "name": "Boudica"
+    },
+    {
+      "id": "27715",
+      "name": "CQ-Ohio"
+    },
+    {
+      "id": "2450",
+      "name": "Gifu Mizuho DMR"
+    },
+    {
+      "id": "7274",
+      "name": "Corn Cob Net (Daily 6-8AM/EDT 40M on 7274)"
+    },
+    {
+      "id": "700",
+      "name": "Albuquerque NM"
+    },
+    {
+      "id": "28700",
+      "name": "Houston-County-TN"
+    },
+    {
+      "id": "97629",
+      "name": "OM AMICI"
+    },
+    {
+      "id": "50117",
+      "name": "mza"
+    },
+    {
+      "id": "43277",
+      "name": "HEARS Network"
+    },
+    {
+      "id": "51511",
+      "name": "DX1MK Makiling Amateur Radio Society"
+    },
+    {
+      "id": "2737",
+      "name": "Kentucky ARES 1"
+    },
+    {
+      "id": "3127022",
+      "name": "Hennepin County AUXCOMM"
+    },
+    {
+      "id": "22825",
+      "name": "Multiprotocoll Swiss Italian"
+    },
+    {
+      "id": "2451",
+      "name": "BAGNOLI RADIO OM NAPOLI SUD ITALIA "
+    },
+    {
+      "id": "3121",
+      "name": "Kentucky Statewide "
+    },
+    {
+      "id": "701",
+      "name": "OPLive Live PD "
+    },
+    {
+      "id": "12111",
+      "name": "Long Island NY"
+    },
+    {
+      "id": "95641",
+      "name": "85 Ragchew Net"
+    }
+  ]
+}

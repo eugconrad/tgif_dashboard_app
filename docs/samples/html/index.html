@@ -1,0 +1,2081 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TGIF Network</title>
+    <meta name="description" content="TGIF Network">
+    <meta name="keywords" content="TGIF, TGIF Network, DMR, hotspot, mmdvm, lastheard, lastheard, pistar, pi-star, brandmeister" />
+
+    <!-- CSS - Javascripts for nav bar and main pages-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <noscript>Sorry, TGIF Network requires JavaScript to be enabled.</noscript>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/css/datatables.min.css" />
+    <script type="text/javascript" src="/assets/js/datatables.min.js"></script>
+    <!-- Start of scrollin text -->
+    <!--   <marquee behavior="scroll" direction="left" scrollamount="8"><h3><b><font color=green><i class="fa fa-bell"></i> Hello TGIF Members</b></font> - <strong>TGIF Server Funding Time is here again please donate</strong></h3></marquee> -->
+    <!-- End of scrollin text -->
+    <!-- Start of Navbar -->
+
+
+    <nav role="navigation" class="navbar navbar-dark navbar-expand-sm sticky-top bg-dark text-monospace text-capitalize text-left">
+        <div class="container-fluid tgifnav">
+            <button id="move-right" data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span></button>
+            <a class="navbar-brand" href="/index.php">TGIF Network
+            </a>
+
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+
+
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" aria-label=" Monitoring"> Monitoring</a>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" role="presentation" href="/lastheard.php" >Last Heard</a>
+                            <a class="dropdown-item" role="presentation" href="/activetg.php" >Active Talkgroups</a>
+                            <a class="dropdown-item" role="presentation" href="/talkgroups.php" >Talkgroup List</a>
+                            <a class="dropdown-item" role="presentation" href="/talkgroup_stats.php" >Talkgroup 30 day Stats</a>
+                            <a class="dropdown-item" role="presentation" href="/status.php" >Server Status</a>
+                            <a class="dropdown-item" role="presentation" href="/Lh-Map.php" >Last Heard Beta Map</a>
+
+
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"
+                            href="/nets/calendar.php"
+                            data-toggle="dropdown"
+                            aria-expanded="false">
+
+                            <i class="fas fa-calendar-alt"></i>
+                            TGIF Nets
+
+                            
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" style="min-width:300px;">
+
+                            <!-- Timezone display -->
+                            <div class="dropdown-header small">
+                                <i class="fas fa-globe"></i>
+                                Timezone
+                                (<span id="userTz"></span>)
+                            </div>
+
+                            
+                                    <!-- ================= NO NETS ================= -->
+                                    <div class="px-3 py-2 text-muted text-center">
+                                        No nets starting in the next 90 minutes
+                                    </div>
+
+                                    <div class="dropdown-divider"></div>
+
+                                
+                                <!-- ================= CALENDAR LINK ================= -->
+                                <a class="dropdown-item text-center" href="/nets/calendar.php">
+                                    View Full Calendar →
+                                </a>
+
+                                </div>
+                    </li>
+
+
+
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" aria-label=" help">Help</a>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" role="presentation" aria-label="" href="/help.php">TGIF Setup</a>
+                            <a class="dropdown-item" role="presentation" href="/faq.php" >FAQ</a>
+                            <a class="dropdown-item" role="presentation" href="https://tgifnetwork.createaforum.com/index.php" target="_blank">Forum</a>
+                            <a class="dropdown-item" role="presentation" href="/helpvid.php" target="_blank">Video Knowledge Base</a>
+                            <a class="dropdown-item" role="presentation" href="/disclaimer.php">Disclaimer</a>
+                            <a class="dropdown-item" role="presentation" href="/privacy-policy.php">Privacy-Policy</a>
+                            <a class="dropdown-item" role="presentation" href="/terms-conditions.php">Terms-Conditions</a>
+
+                        </div>
+                    </li>
+
+                                        <!--<li class="nav-item" role="presentation"><a href="support@tgif.network" class="nav-link active">Contact Us</a></li>-->
+
+
+                </ul>
+
+
+            </div>
+            <div class="move-right nav-item dropdown">
+                <a class="dropdown-toggle nav-link move-left" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-portrait size"></i>
+                    Registration</a><div class="dropdown-menu" role="menu"><a class="dropdown-item " role="presentation" href="/signin.php">Sign In</a><a class="dropdown-item" role="presentation" href="/signin.php#signup">Register</a></div>
+
+                    <!-- </li> -->
+            </div>
+        </div>
+    </nav>
+    <script type="text/javascript" src="/assets/js/togglermenu.js"></script>
+    <!-- End Navbar -->
+    <link rel="stylesheet" href="/assets/css/themes/default.css" />
+    <link rel="stylesheet" href="/assets/css/themes/globals.css" />
+    <link rel="stylesheet" href="/assets/css/header2.css" />
+
+    <script>
+        /* =========================================================
+         * TGIF COUNTDOWN CORE (HEADER + CALENDAR SHARED)
+         * PHP 7.3 SAFE – NO NEW FILES
+         * ======================================================= */
+        (function(window, document) {
+            'use strict';
+
+            if (window.__TGIF_HEADER_UI__) return;
+            window.__TGIF_HEADER_UI__ = true;
+
+            /* -----------------------------------------------------
+             * Shared countdown formatter
+             * --------------------------------------------------- */
+            var TGIFCountdown = {
+                format: function(seconds) {
+                    if (seconds <= 0) return 'ENDED';
+
+                    // Round UP to the next minute (matches calendar)
+                    var totalMin = Math.ceil(seconds / 60);
+
+                    var h = Math.floor(totalMin / 60);
+                    var m = totalMin % 60;
+
+                    if (h > 0) {
+                        return h + 'h ' + m + 'm remaining';
+                    }
+
+                    return totalMin + 'm remaining';
+                }
+            };
+
+            window.TGIFCountdown = TGIFCountdown;
+
+            /* -----------------------------------------------------
+             * Tooltip init (defensive)
+             * --------------------------------------------------- */
+            function initTooltips() {
+                if (!window.jQuery) return;
+                if (!jQuery.fn || typeof jQuery.fn.tooltip !== 'function') return;
+                jQuery('[data-toggle="tooltip"]').tooltip();
+            }
+
+            /* -----------------------------------------------------
+             * Timezone display
+             * --------------------------------------------------- */
+            function setUserTimezone() {
+                try {
+                    if (!window.Intl) return;
+                    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                    var el = document.getElementById('userTz');
+                    if (el && tz) el.textContent = tz;
+                } catch (e) {}
+            }
+
+            /* -----------------------------------------------------
+             * LIVE net updater (header)
+             * --------------------------------------------------- */
+            function updateLiveCountdowns() {
+                if (!window.jQuery) return;
+
+                var now = Math.floor(Date.now() / 1000);
+                var liveCount = 0;
+
+                jQuery('.live-net').each(function() {
+                    var end = parseInt(this.dataset.endTs, 10);
+                    if (!end) return;
+
+                    var remaining = end - now;
+                    var label = jQuery(this).find('.live-countdown');
+
+                    if (remaining <= 0) {
+                        jQuery(this).remove(); // 🔥 auto-remove ended nets
+                        return;
+                    }
+
+                    label
+                        .text(TGIFCountdown.format(remaining))
+                        .removeClass('text-muted')
+                        .addClass('text-danger');
+
+                    liveCount++;
+                });
+
+                // If no live nets left → remove LIVE badge
+                if (liveCount === 0) {
+                    jQuery('.navbar .badge-danger').remove();
+                    jQuery('#live-nets-section').remove(); // ✅ single source of truth
+                }
+
+            }
+
+            /* -----------------------------------------------------
+             * DOM ready helper
+             * --------------------------------------------------- */
+            function onReady(fn) {
+                if (document.readyState === 'complete' ||
+                    document.readyState === 'interactive') {
+                    setTimeout(fn, 0);
+                } else {
+                    document.addEventListener('DOMContentLoaded', fn);
+                }
+            }
+
+            /* -----------------------------------------------------
+             * Init
+             * --------------------------------------------------- */
+            onReady(function() {
+                initTooltips();
+                setUserTimezone();
+                updateLiveCountdowns();
+
+                // Faster updates near end, still cheap
+                setInterval(updateLiveCountdowns, 1000);
+            });
+
+        })(window, document);
+    </script><script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gridstack@1.1.2/dist/gridstack.all.js"></script>
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridstack@1.1.2/dist/gridstack.min.css" />
+<!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css"/>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script> -->
+
+<script src="/assets/js/socket.io.js"></script>
+
+<style>
+    .Banner {
+        text-align: center;
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+    .col-sm-15.col-md-10 {
+        padding-left: 1px;
+        padding-right: 5px;
+    }
+
+    /* start Status overview */
+    .container,
+    .container-sm,
+    .container-md,
+    .container-lg,
+    .container-xl {
+        max-width: 1140px;
+    }
+
+    div.padding-50 {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    div.system-status {
+        padding: 0px;
+    }
+
+    /* End Status overview */
+
+    /*start of mini lastheard */
+    .btn-callsign {
+        padding: 2px 10px 2px 10px;
+        margin-right: 13px;
+        margin-left: 0px;
+        font-size: 14px;
+        line-height: 15px;
+        border-radius: 1.2rem;
+        color: var(--CallSignButtonText);
+        background-color: var(--CallSignButton);
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--hyperlink);
+        /*  text-decoration: underline; */
+    }
+
+    a:hover {
+        color: var(--hyperlinkhover);
+        /*  text-decoration: underline; */
+    }
+
+    input {
+        padding-left: 5px;
+        border-radius: 10.2px;
+        margin-top: 0px;
+        margin-right: 5px;
+    }
+
+    div.dataTables_wrapper div.dataTables_filter label {
+        color: white;
+    }
+
+    .dataTables_filter {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    .dataTables_wrapper no-footer {
+        color: black;
+    }
+
+    div.dataTables_wrapper div.dataTables_info {
+        padding-top: 0.85em;
+        white-space: pre-wrap;
+    }
+
+
+    .table {
+        width: 100%;
+        margin-bottom: 1rem;
+        color: var(--Light-text);
+        background-color: var(--DatatablesBG);
+    }
+
+    table.dataTable.compact tbody th,
+    table.dataTable.compact tbody td {
+        border-radius: 0.2px;
+        box-shadow: var(--box-shadow);
+    }
+
+    table.dataTable.compact thead th,
+    table.dataTable.compact thead td {
+        padding: 4px 1px 5px 5px;
+        border-radius: 0.2px;
+        box-shadow: box-shadow: var(--box-shadow);
+    }
+
+    table.dataTable tbody tr {
+        background-color: #353635;
+    }
+
+
+    /* Add Animation */
+    @-webkit-keyframes animatetop {
+        from {
+            top: -300px;
+            opacity: 0;
+        }
+
+        to {
+            top: 0;
+            opacity: 1;
+        }
+    }
+
+    @keyframes animatetop {
+        from {
+            top: -300px;
+            opacity: 0;
+        }
+
+        to {
+            top: 0;
+            opacity: 1;
+        }
+    }
+
+    .fa.fa-pause {
+        margin-top: -3px;
+    }
+
+    /* End of Lastheard */
+    .grid-stack-item-removing {
+        opacity: 0.8;
+        filter: blur(5px);
+    }
+
+    /* Optional styles for demos */
+    .btn-primary {
+        color: #fff;
+        background-color: #007bff;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: .375rem .75rem;
+        line-height: 1.5;
+        border-radius: .25rem;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: .5rem;
+    }
+
+    .grid-stack {
+        background: var(--BackGround);
+    }
+
+    .grid-stack-item-content {
+        color: var(--Light-text);
+        text-align: center;
+        border-radius: 11.2px;
+        border: 2.5px solid rgba(255, 255, 255, 0.125);
+        background-color: var(--gridstackborder);
+    }
+
+    .grid-stack-item {
+        /*border: 1px solid rgba(0, 0, 0, 0.125);*/
+    }
+
+    .col-sm-15 .col-md-10 .nCol {
+        max-width: 100%;
+        flex: auto;
+    }
+
+    #trash {
+        background: rgba(255, 0, 0, 0.4);
+    }
+
+    /* body {
+      margin: 0;
+      color: var(--Light-text);
+      background: var(--BackGround);
+    } */
+    .btn-donate {
+        display: inline-block;
+        padding: .375rem .75rem;
+        line-height: 1.5;
+        border-radius: .25rem;
+        background-color: yellow;
+    }
+
+    .card {
+        color: var(--Light-text);
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background: var(--BackGround);
+        background-clip: border-box;
+        border-radius: 11.2px;
+        box-shadow: var(--box-shadow);
+        margin: 10px auto;
+        margin-bottom: 12px;
+
+    }
+
+    .card-body {
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        min-height: 1px;
+        padding: 5px 5px 5px 5px;
+        color: var(--white-text);
+        border-radius: inherit;
+        text-align: inherit;
+        background-color: var(--LhTableBG);
+    }
+
+    #system-status {
+        max-width: 100%;
+    }
+
+
+    /*
+    #main_grid {
+        background: var(--BackGround);
+        border-radius: 11.2px;
+    } */
+
+    .stats {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .col {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    /* === Announcements === */
+
+    .announcement {
+        background: #2f2f2f;
+        border-radius: 10px;
+        padding: 0px 18px;
+        margin-bottom: 18px;
+        box-shadow: var(--box-shadow);
+    }
+
+    .announcement-header {
+        font-size: 1.05rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 6px;
+    }
+
+
+    .announcement-header i {
+        font-size: 1.2rem;
+    }
+
+    .announcement-title {
+        color: #eaeaea;
+    }
+
+    .announcement-subtitle {
+        color: #9aa0a6;
+        font-weight: normal;
+    }
+
+    .announcement-body ul {
+        margin: 10px 0 12px 22px;
+        padding-left: 0;
+    }
+
+
+    .announcement-body p {
+        margin-bottom: 10px;
+    }
+
+    .announcement-body ul {
+        margin-left: 18px;
+        margin-bottom: 10px;
+    }
+
+    .announcement-body li {
+        margin-bottom: 8px;
+    }
+
+
+    .announcement-footer {
+        margin-top: 16px;
+        font-size: 0.8rem;
+        color: #9aa0a6;
+        text-align: center;
+    }
+
+
+    .announcement-author {
+        font-style: italic;
+    }
+
+    .announcement-date {
+        margin-top: 4px;
+    }
+
+    .announcement-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .announcement-toggle {
+        background: transparent;
+        border: none;
+        color: #9aa0a6;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+    .announcement-toggle:hover {
+        color: #ffffff;
+    }
+
+    .announcement-collapse {
+        overflow: hidden;
+        transition: max-height 0.35s ease, opacity 0.25s ease;
+        max-height: 3000px;
+        opacity: 1;
+    }
+
+    .announcement.collapsed .announcement-collapse {
+        max-height: 0;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .announcement.collapsed .announcement-toggle i {
+        transform: rotate(180deg);
+    }
+
+    .announcement-header-left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .announcement-title {
+        color: #8cff8c;
+        font-weight: bold;
+    }
+
+    .announcement-subtitle {
+        color: #9aa0a6;
+    }
+</style>
+
+</head>
+
+<body>
+
+    <!-- =========================
+     GLOBAL BANNER
+========================= -->
+    <div class="MainWrapper Banner">
+        <h3>TGIF Network</h3>
+        <h5>
+            <div class="alerts1" style="display:none;">
+                &nbsp;Main alert code here&nbsp;
+            </div>
+        </h5>
+        <p>
+            <div><p>For questions or to report a problem please contact us via email at support (at) tgif (dot) network</p><p>Please <a href=/signin.php>Login or Register</a></p></div>        </p>
+    </div>
+
+    <!-- =========================
+     MAIN GRID CONTAINER
+========================= -->
+    <div class="MainWrapper" id="wrapper1">
+        <div class="container" id="system-status">
+            <div class="row">
+                <div class="col-sm-15 col-md-10" style="max-width:100%; flex:auto;">
+
+                    <!-- GRIDSTACK ROOT (ONLY ONE) -->
+                    <div id="main_grid" class="grid-stack" data-gs-animate="yes">
+
+                        <!-- =========================
+                         ANNOUNCEMENTS (LEFT)
+                    ========================= -->
+                        <div class="grid-stack-item"
+                            data-gs-x="0" data-gs-y="0"
+                            data-gs-width="5" data-gs-height="6"
+                            data-gs-min-width="4">
+
+                            <div class="grid-stack-item-content">
+                                <h5 class="text-capitalize text-center textcolor">
+                                    <strong class="textcolor">Announcements</strong>
+                                </h5>
+
+                                <div class="card" style="margin:2px;">
+                                    
+                                                                            
+                                        <div class="announcement ">
+                                            <div class="announcement-header">
+                                                <div class="announcement-header-left">
+                                                    <i class='fa fa-bell'></i>
+                                                                                                            <span class="announcement-title">
+                                                            Service Interuption                                                        </span>
+                                                    
+                                                                                                    </div>
+
+                                                <button class="announcement-toggle" type="button"
+                                                    aria-expanded="true">
+                                                    <i class="fas fa-chevron-up"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="announcement-collapse">
+                                                <div class="announcement-body">
+                                                    There was a short server outage earlier this evening around 9:30 pm est. We think it had  something to do with the severe storms in the Chicagoland area where our servers are located. Everything appears to be back online.
+TGIF Support Staff                                                </div>
+
+                                                <div class="announcement-footer">
+                                                    <div class="announcement-author">
+                                                        — TGIF Network Admin Team
+                                                    </div>
+
+                                                                                                            <div class="announcement-date">
+                                                            June 18, 2026 @ 2:52 AM                                                        </div>
+                                                                                                    </div>
+                                            </div>
+                                        </div>
+                                                                            
+                                        <div class="announcement collapsed">
+                                            <div class="announcement-header">
+                                                <div class="announcement-header-left">
+                                                    <i class='fa fa-bell'></i>
+                                                                                                            <span class="announcement-title">
+                                                            NEW: Rules for new TGIF Talk Group requests                                                        </span>
+                                                    
+                                                                                                    </div>
+
+                                                <button class="announcement-toggle" type="button"
+                                                    aria-expanded="false">
+                                                    <i class="fas fa-chevron-up"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="announcement-collapse">
+                                                <div class="announcement-body">
+                                                    TGIF is a System based in the United States which is administered by English speaking personnel.  
+
+TGIF is now implementing the following Rules regarding Talk Group registrations.   
+
+  1) Seven digit talk groups will not be approved.   
+  2) Talk groups must contain a descriptive Name in English.   
+  3) Talk Groups must contain a Description in English.                                                </div>
+
+                                                <div class="announcement-footer">
+                                                    <div class="announcement-author">
+                                                        — TGIF Network Admin Team
+                                                    </div>
+
+                                                                                                            <div class="announcement-date">
+                                                            April 26, 2026 @ 9:04 PM                                                        </div>
+                                                                                                    </div>
+                                            </div>
+                                        </div>
+                                                                            
+                                        <div class="announcement collapsed">
+                                            <div class="announcement-header">
+                                                <div class="announcement-header-left">
+                                                    <i class='fa fa-bell'></i>
+                                                                                                            <span class="announcement-title">
+                                                            📡 Net Schedule Back Online                                                        </span>
+                                                    
+                                                                                                    </div>
+
+                                                <button class="announcement-toggle" type="button"
+                                                    aria-expanded="false">
+                                                    <i class="fas fa-chevron-up"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="announcement-collapse">
+                                                <div class="announcement-body">
+                                                    We’re pleased to confirm that the Net Schedule system is now back up and running.
+
+All services have been restored and are operating normally. You can now:
+
+View scheduled nets
+
+Add or edit upcoming nets
+
+Manage recurring entries
+
+Browse the 30-day rolling calendar
+
+If you notice anything that doesn’t look quite right, please report it so we can investigate promptly.
+
+Thank you for your patience while we completed testing and brought everything back online.                                                </div>
+
+                                                <div class="announcement-footer">
+                                                    <div class="announcement-author">
+                                                        — TGIF Network Admin Team
+                                                    </div>
+
+                                                                                                            <div class="announcement-date">
+                                                            February 17, 2026 @ 12:30 AM                                                        </div>
+                                                                                                    </div>
+                                            </div>
+                                        </div>
+                                                                            
+                                        <div class="announcement collapsed">
+                                            <div class="announcement-header">
+                                                <div class="announcement-header-left">
+                                                    <i class='fa fa-bell'></i>
+                                                                                                            <span class="announcement-title">
+                                                            RIP K1WMP                                                        </span>
+                                                    
+                                                                                                    </div>
+
+                                                <button class="announcement-toggle" type="button"
+                                                    aria-expanded="false">
+                                                    <i class="fas fa-chevron-up"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="announcement-collapse">
+                                                <div class="announcement-body">
+                                                    Our TGIF radio friend William “Bill” Peters, K1WMP, born around 1934 (age 91 in late 2025), became a Silent Key in February 2026.
+
+Licensed in 1984 by Gordon West (KB6NOA) at the Orange County fairgrounds, he upgraded to General and Extra after moving to Victorville/Hesperia, California.
+
+A true servant of the community, Bill volunteered tirelessly with the Los Angeles County Sheriff’s Department, CERT emergency communications, the Pasadena Rose Parade, Los Angeles Marathon, the 1987 Whittier earthquake response, and San Bernardino County Sheriff’s COPS program. He selflessly administered over 400 amateur radio exams as an ARRL Volunteer Examiner Coordinator, opening the door to ham radio for countless others.
+
+Retired Teamster truck driver, he crisscrossed 48 states and Canada hauling produce and freight, always with a spirit of adventure and hard work.
+
+Despite the heavy burdens of macular degeneration, partial sight, and tremors that confined him to home and eventually hospice, Bill found profound joy and purpose in digital modes. His station—DMR, C4FM, Yaesu Wires-X, P25, EchoLink, AllStar—lived on handhelds: GD77 for the HANDIHAM blind group, Yaesu FT3D, Anytone 878UVII Plus.
+
+On MNet and TGIF DMR networks, he warmly posed thoughtful questions, shared practical solutions, and poured out his dreams and ideas about DMR, Open GD77 accessibility for vision-impaired operators, FCC procedures, club fellowship, public service, and spreading goodwill. His voice carried encouragement and friendship across the airwaves.
+
+Bill often shared from the heart: “Due to the fact of meeting new Ham Radio Operators (Friends) on the different modes, with my limitations and circumstances at my QTH, without my radios, I would be a basket case.”
+
+Those radios kept him connected, alive with friendship, and never alone. He touched so many lives with quiet strength, kindness, and unwavering love for ham radio.
+
+Rest easy, dear friend. Your signal endures in our memories.
+
+Fair winds and following seas, K1WMP. 73 and Silent Key.                                                </div>
+
+                                                <div class="announcement-footer">
+                                                    <div class="announcement-author">
+                                                        — TGIF Network Admin Team
+                                                    </div>
+
+                                                                                                            <div class="announcement-date">
+                                                            February 13, 2026 @ 10:14 AM                                                        </div>
+                                                                                                    </div>
+                                            </div>
+                                        </div>
+                                                                            
+                                        <div class="announcement collapsed">
+                                            <div class="announcement-header">
+                                                <div class="announcement-header-left">
+                                                    <i class='fa fa-bell'></i>
+                                                                                                            <span class="announcement-title">
+                                                            Net Schedule                                                        </span>
+                                                    
+                                                                                                    </div>
+
+                                                <button class="announcement-toggle" type="button"
+                                                    aria-expanded="false">
+                                                    <i class="fas fa-chevron-up"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="announcement-collapse">
+                                                <div class="announcement-body">
+                                                    There has been a issue found with the new net scheduler. The issue has to do with the times. Please be patient until the issue is fixed. Sorry for any inconvenience this has caused.                                                </div>
+
+                                                <div class="announcement-footer">
+                                                    <div class="announcement-author">
+                                                        — TGIF Network Admin Team
+                                                    </div>
+
+                                                                                                            <div class="announcement-date">
+                                                            February 9, 2026 @ 12:39 PM                                                        </div>
+                                                                                                    </div>
+                                            </div>
+                                        </div>
+                                                                            
+                                        <div class="announcement collapsed">
+                                            <div class="announcement-header">
+                                                <div class="announcement-header-left">
+                                                    <i class='fa fa-bell'></i>
+                                                                                                            <span class="announcement-title">
+                                                            Mitch Savage (EA7KDO)                                                        </span>
+                                                    
+                                                                                                    </div>
+
+                                                <button class="announcement-toggle" type="button"
+                                                    aria-expanded="false">
+                                                    <i class="fas fa-chevron-up"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="announcement-collapse">
+                                                <div class="announcement-body">
+                                                    In Remembrance of Mitch Savage, EA7KDO / KJ5NL (SK)
+
+With deep respect and heartfelt sadness, we remember Mitch Savage, EA7KDO / KJ5NL, who became a Silent Key on February 6, 2024.
+
+Born on August 13, 1949, in Kingston, Oklahoma, Mitch lived a life defined by service, innovation, and an unwavering passion for amateur radio.
+
+Mitch served his country as a U.S. Army Warrant Officer 4 from 1967 to 1974, flying Huey helicopters in Vietnam. After his military service, he studied telephone engineering and went on to operate his own commercial long-distance telephone company — a reflection of his lifelong dedication to communications technology.
+
+Licensed in 1964 as KJ5NL, Mitch embraced amateur radio early in life. In later years, beginning in 2016, he immersed himself in digital modes including DMR, Fusion, D-Star, P25, NXDN, and WiresX. He was never content to simply operate — he innovated, experimented, and helped others grow.
+
+In 2017, Mitch moved to Spain with his beloved wife Yolanda, settling first in Almuñécar and later in Motril. From his “Dungeon” — the ham shack in the basement of his condo — he reached operators across the globe.
+
+In 2018, Mitch co-founded the TGIF Network, helping grow it into a major DMR hub with talkgroups such as 31665, 23456, and many others. His influence shaped the infrastructure many of us use today. He also contributed to the development of MNet and continuously experimented with hotspots, Nextion screens, RADXA Zero systems, RS978 SDR, and even balcony antennas.
+
+Those who spent time on TGIF remember Mitch not only for his technical expertise but for his generosity. He patiently coached newcomers through SSH prompts to add custom DMR servers to Pi-Star, guided operators in configuring transceiver codeplugs, fine-tuning RX/TX offsets, and solving countless technical challenges. Conversations with Mitch could seamlessly move from digital radio configuration to the finer points of billiards — always delivered with humor and warmth.
+
+Mitch was more than a skilled operator. He was a connector of people. He believed amateur radio was about fellowship as much as frequency. He listened. He encouraged. He mentored. He built community.
+
+Every QSO that travels across TGIF today carries part of his legacy — through the network structures he helped design and the Nextion screens he crafted and inspired.
+
+Mitch is survived by his loving wife Yolanda and his family. Though he is now Silent Key, his signal continues in the friendships he fostered and the network he helped create.
+
+Fair winds and following seas, EA7KDO.
+
+73 and Silent Key                                                </div>
+
+                                                <div class="announcement-footer">
+                                                    <div class="announcement-author">
+                                                        — TGIF Network Admin Team
+                                                    </div>
+
+                                                                                                            <div class="announcement-date">
+                                                            February 7, 2026 @ 12:13 PM                                                        </div>
+                                                                                                    </div>
+                                            </div>
+                                        </div>
+                                                                            
+                                        <div class="announcement collapsed">
+                                            <div class="announcement-header">
+                                                <div class="announcement-header-left">
+                                                    <i class='fa fa-bell'></i>
+                                                                                                            <span class="announcement-title">
+                                                            What’s new: Live nets can now be joined directly from the calendar using SelfCare.                                                        </span>
+                                                    
+                                                                                                    </div>
+
+                                                <button class="announcement-toggle" type="button"
+                                                    aria-expanded="false">
+                                                    <i class="fas fa-chevron-up"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="announcement-collapse">
+                                                <div class="announcement-body">
+                                                    What’s new: Live nets can now be joined directly from the calendar using SelfCare.
+
+The Net Scheduler is now live for Talkgroup administrators and available through the TG admin panel (far-right icon). Admins can create, edit, and manage scheduled nets using the new interface.
+
+This is a testing phase — feedback is appreciated.
+Please report issues to support@tgif.network
+.                                                </div>
+
+                                                <div class="announcement-footer">
+                                                    <div class="announcement-author">
+                                                        — TGIF Network Admin Team
+                                                    </div>
+
+                                                                                                            <div class="announcement-date">
+                                                            February 6, 2026 @ 11:43 PM                                                        </div>
+                                                                                                    </div>
+                                            </div>
+                                        </div>
+                                                                            
+                                        <div class="announcement collapsed">
+                                            <div class="announcement-header">
+                                                <div class="announcement-header-left">
+                                                    <i class='fa fa-bell'></i>
+                                                                                                            <span class="announcement-title">
+                                                            Status: Automated Registration Issue - Resolved                                                        </span>
+                                                    
+                                                                                                    </div>
+
+                                                <button class="announcement-toggle" type="button"
+                                                    aria-expanded="false">
+                                                    <i class="fas fa-chevron-up"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="announcement-collapse">
+                                                <div class="announcement-body">
+                                                    An issue affecting delivery of some automated emails (including account verification and password resets) has now been resolved. All email services are operating normally.
+If you attempted to register or reset your password earlier and did not receive an email, please try again. For assistance, contact support@tgif.network
+.
+Thank you for your patience.
+— TGIF Network Operations                                                </div>
+
+                                                <div class="announcement-footer">
+                                                    <div class="announcement-author">
+                                                        — TGIF Network Admin Team
+                                                    </div>
+
+                                                                                                            <div class="announcement-date">
+                                                            January 24, 2026 @ 7:14 PM                                                        </div>
+                                                                                                    </div>
+                                            </div>
+                                        </div>
+                                                                            
+                                        <div class="announcement collapsed">
+                                            <div class="announcement-header">
+                                                <div class="announcement-header-left">
+                                                    <i class='fa fa-exclamation-triangle'></i>
+                                                                                                            <span class="announcement-title">
+                                                            Service Notice – Automated Registration Issue                                                        </span>
+                                                    
+                                                                                                    </div>
+
+                                                <button class="announcement-toggle" type="button"
+                                                    aria-expanded="false">
+                                                    <i class="fas fa-chevron-up"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="announcement-collapse">
+                                                <div class="announcement-body">
+                                                    We are currently experiencing an issue with the automated registration system on the TGIF Network.
+As a result, automated registration emails may not be sent or may not complete as expected.
+Our team is actively investigating the issue and working to resolve it as quickly as possible. Existing users and network services are not affected.
+We apologise for any inconvenience this may cause and appreciate your patience. Further updates will be provided once the issue has been resolved.
+
+— TGIF Network Team                                                </div>
+
+                                                <div class="announcement-footer">
+                                                    <div class="announcement-author">
+                                                        — TGIF Network Admin Team
+                                                    </div>
+
+                                                                                                            <div class="announcement-date">
+                                                            January 24, 2026 @ 5:55 PM                                                        </div>
+                                                                                                    </div>
+                                            </div>
+                                        </div>
+                                                                            
+                                        <div class="announcement collapsed">
+                                            <div class="announcement-header">
+                                                <div class="announcement-header-left">
+                                                    
+                                                                                                            <span class="announcement-title">
+                                                            TGIF Network Announcement                                                        </span>
+                                                    
+                                                                                                            <span class="announcement-subtitle">
+                                                            — New Feature Now Live                                                        </span>
+                                                                                                    </div>
+
+                                                <button class="announcement-toggle" type="button"
+                                                    aria-expanded="false">
+                                                    <i class="fas fa-chevron-up"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="announcement-collapse">
+                                                <div class="announcement-body">
+                                                    
+
+<p>Hi everyone,</p>
+<p>
+We’re excited to introduce the latest Beta Custom Scan tool, now live on the TGIF Network.
+This new feature brings commercial DMR–style scanning to your hotspot, intelligently
+following activity across multiple talkgroups while prioritising clear, uninterrupted audio.
+</p>
+
+<p><strong>Where to find it:</strong><br>
+Look under your TGIF Dashboard, beneath your callsign.
+</p>
+
+<p><strong>Key features:</strong></p>
+<ul>
+<li>Scan up to 10 talkgroups</li>
+<li>Priority-based scanning (Priority 1 = highest)</li>
+<li>Configurable dwell time for stable audio</li>
+<li>Manual HOLD with lock indicator</li>
+</ul>
+
+<p><strong>Important:</strong><br>
+Your radio must support Open RX / Promiscuous / Digital Monitor for audio to be heard.
+Contacts are display-only and do not enable reception by themselves.
+</p>
+
+<p>
+Custom Scan is designed for stability, clarity, and correct radio behaviour, rather than rapid talkgroup hopping.
+</p>
+
+<p>— TGIF Network Admin Team<br>
+<strong>January 2026</strong></p>                                                </div>
+
+                                                <div class="announcement-footer">
+                                                    <div class="announcement-author">
+                                                        — TGIF Network Admin Team
+                                                    </div>
+
+                                                                                                            <div class="announcement-date">
+                                                            January 1, 2026 @ 12:00 AM                                                        </div>
+                                                                                                    </div>
+                                            </div>
+                                        </div>
+                                                                            
+                                        <div class="announcement collapsed">
+                                            <div class="announcement-header">
+                                                <div class="announcement-header-left">
+                                                    
+                                                                                                            <span class="announcement-title">
+                                                            Outage Today                                                        </span>
+                                                    
+                                                                                                            <span class="announcement-subtitle">
+                                                            — TGIF Network Status Update                                                        </span>
+                                                                                                    </div>
+
+                                                <button class="announcement-toggle" type="button"
+                                                    aria-expanded="false">
+                                                    <i class="fas fa-chevron-up"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="announcement-collapse">
+                                                <div class="announcement-body">
+                                                    
+<p>
+Earlier today, the TGIF Network experienced an unexpected outage.
+A 6-monthly cron job accidentally changed a critical database permission,
+which caused the server to go offline for around one hour.
+</p>
+
+<p>
+Once the fault was identified, the TGIF Admin Team corrected the issue and restored full service.
+All systems are now operating normally, and the underlying problem has been permanently resolved.
+</p>
+
+<p>
+We apologise for the downtime and appreciate everyone’s patience and understanding.
+</p>
+
+<p>
+Thank you for your continued support of the TGIF Network.
+</p>
+
+<p><strong>2025-11-22 (Florida, USA)</strong></p>                                                </div>
+
+                                                <div class="announcement-footer">
+                                                    <div class="announcement-author">
+                                                        — TGIF Network Admin Team
+                                                    </div>
+
+                                                                                                            <div class="announcement-date">
+                                                            November 22, 2025 @ 12:00 AM                                                        </div>
+                                                                                                    </div>
+                                            </div>
+                                        </div>
+                                                                            
+                                        <div class="announcement collapsed">
+                                            <div class="announcement-header">
+                                                <div class="announcement-header-left">
+                                                    
+                                                                                                            <span class="announcement-title">
+                                                            TGIF Network Notice                                                        </span>
+                                                    
+                                                                                                            <span class="announcement-subtitle">
+                                                            — Temporary Downtime Expected                                                        </span>
+                                                                                                    </div>
+
+                                                <button class="announcement-toggle" type="button"
+                                                    aria-expanded="false">
+                                                    <i class="fas fa-chevron-up"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="announcement-collapse">
+                                                <div class="announcement-body">
+                                                    
+<p>Hi everyone,</p>
+
+<p>
+Our hosting provider will be migrating servers in Chicago to a new CoreSite facility starting at
+12:01 AM CST on Tuesday, November 11.
+This move is completely outside of TGIF’s control, and during the transition,
+some TGIF services may go offline for several hours on one morning this week —
+most likely November 12 or 13.
+</p>
+
+<p><strong>Please note:</strong></p>
+<ul>
+<li>The downtime is temporary and part of a large-scale hardware upgrade by the data center</li>
+<li>All services should return to normal once the migration is complete</li>
+<li>There is no need to open support tickets — our team is already monitoring the situation</li>
+</ul>
+
+<p>
+Once completed, TGIF will be running on new, faster, and more reliable infrastructure.
+</p>
+
+<p>— TGIF Network Admin Team<br>
+<strong>November 11, 2025 – 12:37 PM CST (Chicago)</strong></p>                                                </div>
+
+                                                <div class="announcement-footer">
+                                                    <div class="announcement-author">
+                                                        — TGIF Network Admin Team
+                                                    </div>
+
+                                                                                                            <div class="announcement-date">
+                                                            November 11, 2025 @ 12:37 PM                                                        </div>
+                                                                                                    </div>
+                                            </div>
+                                        </div>
+                                                                            
+                                        <div class="announcement collapsed">
+                                            <div class="announcement-header">
+                                                <div class="announcement-header-left">
+                                                    
+                                                                                                            <span class="announcement-title">
+                                                            Thank You TGIF Members                                                        </span>
+                                                    
+                                                                                                            <span class="announcement-subtitle">
+                                                            — Server Funding Update                                                        </span>
+                                                                                                    </div>
+
+                                                <button class="announcement-toggle" type="button"
+                                                    aria-expanded="false">
+                                                    <i class="fas fa-chevron-up"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="announcement-collapse">
+                                                <div class="announcement-body">
+                                                    
+
+<p>
+We would like to sincerely thank everyone who kindly donated to keep the TGIF Network service running.
+Thanks to your incredible generosity, our server costs are now covered for the next 12 months or so.
+</p>
+<p>
+Your support ensures that the TGIF Network continues to grow strong, stay reliable,
+and serve the community worldwide.
+We are truly grateful for each and every contribution that made this possible.
+</p>
+
+<p>
+With funding secured, we can now focus on improving and expanding the network’s features for all of you.
+If you still wish to support the network further, donations remain available via the Network Dashboard.
+</p>
+
+<p><strong>2025-09-16</strong></p>                                                </div>
+
+                                                <div class="announcement-footer">
+                                                    <div class="announcement-author">
+                                                        — TGIF Network Admin Team
+                                                    </div>
+
+                                                                                                            <div class="announcement-date">
+                                                            September 16, 2025 @ 12:00 AM                                                        </div>
+                                                                                                    </div>
+                                            </div>
+                                        </div>
+                                                                            
+                                        <div class="announcement collapsed">
+                                            <div class="announcement-header">
+                                                <div class="announcement-header-left">
+                                                    
+                                                                                                            <span class="announcement-title">
+                                                            Hello TGIF Members                                                        </span>
+                                                    
+                                                                                                            <span class="announcement-subtitle">
+                                                            — TGIF Server Funding                                                        </span>
+                                                                                                    </div>
+
+                                                <button class="announcement-toggle" type="button"
+                                                    aria-expanded="false">
+                                                    <i class="fas fa-chevron-up"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="announcement-collapse">
+                                                <div class="announcement-body">
+                                                    
+<p>
+We’ve recently expanded and now run three servers across different providers
+to keep the TGIF Network growing strong.
+</p>
+
+<p>
+To help cover these costs, we’ve set up a new PayPal donation system.
+If you’d like to support the network, we’d be grateful for any donation —
+every contribution helps keep the servers online and the community running.
+</p>
+
+<p>
+Thank you to everyone who has supported us in the past with recurring payments.
+The donation link will be available on the Network Dashboard in several places
+until we reach a stable funding level.
+</p>
+
+<p>
+Rob will also talk more about this on Friday night’s Net.
+</p>
+
+<p>
+Your generosity goes directly toward funding our servers, and it makes a real difference.
+Thank you for supporting TGIF.
+</p>
+
+<p><strong>2025-09-07 11:30 CDT (UTC-5)</strong></p>                                                </div>
+
+                                                <div class="announcement-footer">
+                                                    <div class="announcement-author">
+                                                        — TGIF Network Admin Team
+                                                    </div>
+
+                                                                                                            <div class="announcement-date">
+                                                            September 7, 2025 @ 11:30 AM                                                        </div>
+                                                                                                    </div>
+                                            </div>
+                                        </div>
+                                                                            
+                                        <div class="announcement collapsed">
+                                            <div class="announcement-header">
+                                                <div class="announcement-header-left">
+                                                    
+                                                                                                            <span class="announcement-title">
+                                                            New My Contacts Page Released                                                        </span>
+                                                    
+                                                                                                    </div>
+
+                                                <button class="announcement-toggle" type="button"
+                                                    aria-expanded="false">
+                                                    <i class="fas fa-chevron-up"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="announcement-collapse">
+                                                <div class="announcement-body">
+                                                    
+<p>
+We’re excited to announce the release of the new and improved My DMR Contacts page.
+</p>
+
+<p><strong>Features include:</strong></p>
+<ul>
+<li>Live updates showing contacts keying up in real time</li>
+<li>Self-Care integration — click a talkgroup to apply it instantly</li>
+<li>Track up to 10 contacts in a clean, mobile-friendly layout</li>
+<li>Status badge showing how many contacts are added</li>
+</ul>
+
+<p>
+You can find My Contacts under your account.
+</p>
+
+<p><strong>July 27, 2025 @ 10:00 AM</strong></p>                                                </div>
+
+                                                <div class="announcement-footer">
+                                                    <div class="announcement-author">
+                                                        — TGIF Network Admin Team
+                                                    </div>
+
+                                                                                                            <div class="announcement-date">
+                                                            July 27, 2025 @ 10:00 AM                                                        </div>
+                                                                                                    </div>
+                                            </div>
+                                        </div>
+                                                                            
+                                        <div class="announcement collapsed">
+                                            <div class="announcement-header">
+                                                <div class="announcement-header-left">
+                                                    
+                                                                                                            <span class="announcement-title">
+                                                            Email Server Back Online                                                        </span>
+                                                    
+                                                                                                            <span class="announcement-subtitle">
+                                                            — Email Status                                                        </span>
+                                                                                                    </div>
+
+                                                <button class="announcement-toggle" type="button"
+                                                    aria-expanded="false">
+                                                    <i class="fas fa-chevron-up"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="announcement-collapse">
+                                                <div class="announcement-body">
+                                                    
+
+<p>
+Our email system is now back online.
+</p>
+<p><strong>December 1, 2024 @ 6:30 AM</strong></p>                                                </div>
+
+                                                <div class="announcement-footer">
+                                                    <div class="announcement-author">
+                                                        — TGIF Network Admin Team
+                                                    </div>
+
+                                                                                                            <div class="announcement-date">
+                                                            December 1, 2024 @ 6:30 AM                                                        </div>
+                                                                                                    </div>
+                                            </div>
+                                        </div>
+                                                                            
+                                        <div class="announcement collapsed">
+                                            <div class="announcement-header">
+                                                <div class="announcement-header-left">
+                                                    
+                                                                                                            <span class="announcement-title">
+                                                            Email Server Down                                                        </span>
+                                                    
+                                                                                                            <span class="announcement-subtitle">
+                                                            — Email Problems                                                        </span>
+                                                                                                    </div>
+
+                                                <button class="announcement-toggle" type="button"
+                                                    aria-expanded="false">
+                                                    <i class="fas fa-chevron-up"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="announcement-collapse">
+                                                <div class="announcement-body">
+                                                    
+
+<p>
+We are working to fix our email system.
+We apologise for any inconvenience this may cause.
+</p>
+<p><strong>November 26, 2024 @ 7:30 PM</strong></p>                                                </div>
+
+                                                <div class="announcement-footer">
+                                                    <div class="announcement-author">
+                                                        — TGIF Network Admin Team
+                                                    </div>
+
+                                                                                                            <div class="announcement-date">
+                                                            November 26, 2024 @ 7:30 PM                                                        </div>
+                                                                                                    </div>
+                                            </div>
+                                        </div>
+                                                                            
+                                        <div class="announcement collapsed">
+                                            <div class="announcement-header">
+                                                <div class="announcement-header-left">
+                                                    
+                                                                                                            <span class="announcement-title">
+                                                            Server Downtime                                                        </span>
+                                                    
+                                                                                                            <span class="announcement-subtitle">
+                                                            — Reboot                                                        </span>
+                                                                                                    </div>
+
+                                                <button class="announcement-toggle" type="button"
+                                                    aria-expanded="false">
+                                                    <i class="fas fa-chevron-up"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="announcement-collapse">
+                                                <div class="announcement-body">
+                                                    
+<p>
+A server reboot was issued for updates.
+New registrations and the approval system have been fixed.
+</p>
+
+<p><strong>July 22, 2024 @ 3:30 PM</strong></p>                                                </div>
+
+                                                <div class="announcement-footer">
+                                                    <div class="announcement-author">
+                                                        — TGIF Network Admin Team
+                                                    </div>
+
+                                                                                                            <div class="announcement-date">
+                                                            July 22, 2024 @ 3:30 PM                                                        </div>
+                                                                                                    </div>
+                                            </div>
+                                        </div>
+                                                                            
+                                        <div class="announcement collapsed">
+                                            <div class="announcement-header">
+                                                <div class="announcement-header-left">
+                                                    
+                                                                                                            <span class="announcement-title">
+                                                            Sad Notice                                                        </span>
+                                                    
+                                                                                                    </div>
+
+                                                <button class="announcement-toggle" type="button"
+                                                    aria-expanded="false">
+                                                    <i class="fas fa-chevron-up"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="announcement-collapse">
+                                                <div class="announcement-body">
+                                                    
+<p>
+It is with great sadness that we report that our good friend Mitch (EA7KDO)
+became a silent key on February 6, 2024.
+</p>
+
+<p>
+For those fortunate enough to have known Mitch, his profound impact and unwavering friendship are undeniable.
+The memory of Mitch Savage will endure indefinitely, his legacy forever etched in our hearts.
+</p>
+
+<p>
+As the founder of the TGIF Network, Mitch leaves behind a remarkable contribution to amateur radio and beyond.
+</p>
+
+<p>
+This Friday’s TGIF Net will be dedicated to Mitch, providing a space for us to gather,
+reminisce, and honour his life and achievements.
+</p>
+
+<p>
+Rest in peace, Mitch.
+</p>
+
+<p>
+Our heartfelt condolences extend to Mitch’s wife and family during this difficult time.
+</p>
+
+<p><strong>February 6, 2024</strong></p>                                                </div>
+
+                                                <div class="announcement-footer">
+                                                    <div class="announcement-author">
+                                                        — TGIF Network Admin Team
+                                                    </div>
+
+                                                                                                            <div class="announcement-date">
+                                                            February 6, 2024 @ 12:00 AM                                                        </div>
+                                                                                                    </div>
+                                            </div>
+                                        </div>
+                                                                            
+                                        <div class="announcement collapsed">
+                                            <div class="announcement-header">
+                                                <div class="announcement-header-left">
+                                                    
+                                                                                                            <span class="announcement-title">
+                                                            Upstream Link Issue                                                        </span>
+                                                    
+                                                                                                    </div>
+
+                                                <button class="announcement-toggle" type="button"
+                                                    aria-expanded="false">
+                                                    <i class="fas fa-chevron-up"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="announcement-collapse">
+                                                <div class="announcement-body">
+                                                    
+
+<p>
+The issues in Chicago are due to components in our routers overheating
+following a major datacenter outage involving their cooling system.
+</p>
+
+<p>
+As a result, we are currently unable to stop packet loss.
+We are actively monitoring the situation and awaiting updates from the facility regarding a permanent fix.
+</p>
+
+<p><strong>January 14, 2024 @ 11:48 AM PT</strong></p>                                                </div>
+
+                                                <div class="announcement-footer">
+                                                    <div class="announcement-author">
+                                                        — TGIF Network Admin Team
+                                                    </div>
+
+                                                                                                            <div class="announcement-date">
+                                                            January 14, 2024 @ 11:48 AM                                                        </div>
+                                                                                                    </div>
+                                            </div>
+                                        </div>
+                                                                    </div>
+                            </div>
+                        </div>
+
+                        <!-- =========================
+                         TGIF DISCORD (CENTER)
+                    ========================= -->
+                        
+                        <!-- =========================
+                         SERVER STATISTICS (RIGHT)
+                    ========================= -->
+                        <div class="grid-stack-item"
+                            data-gs-x="8" data-gs-y="0"
+                            data-gs-width="4" data-gs-height="6"
+                            data-gs-min-width="4">
+
+                            <div class="grid-stack-item-content">
+                                <h3>Server Statistics</h3>
+
+                                <div class="table-responsive">
+                                    <table id="Overview"
+                                        class="table table-bordered table-striped compact server-status">
+                                    </table>
+                                </div>
+
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-striped compact server-status">
+                                        <thead>
+                                            <tr>
+                                                <th>Registered Users</th>
+                                                <th>Active Users</th>
+                                                <th>Talkgroups</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="bg-success">23510</td>
+                                                <td class="bg-success">3851</td>
+                                                <td class="bg-success">3329</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- /#main_grid -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    document.addEventListener('click', function(e) {
+        const btn = e.target.closest('.announcement-toggle');
+        if (!btn) return;
+
+        const ann = btn.closest('.announcement');
+        const icon = btn.querySelector('i');
+
+        ann.classList.toggle('collapsed');
+
+        const collapsed = ann.classList.contains('collapsed');
+        btn.setAttribute('aria-expanded', String(!collapsed));
+
+        icon.classList.toggle('fa-chevron-up', !collapsed);
+        icon.classList.toggle('fa-chevron-down', collapsed);
+    });
+</script>
+
+<script>
+    var socket = io('https://' + window.location.host);
+
+
+    function getUnixTimestamp() {
+        return Math.round((new Date()).getTime() / 1000);
+    }
+
+    function formatTime(fTimestamp) {
+        var date = new Date(fTimestamp * 1000);
+
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+
+        var day = date.getDate();
+        var month = date.getMonth() + 1;
+        var year = date.getFullYear();
+        var hours = date.getHours();
+        var minutes = "0" + date.getMinutes();
+        var seconds = "0" + date.getSeconds();
+
+        // Will display time in 10:30:23 format
+        return month + "/" + day + "/" + year + "  " + hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+    }
+
+    function getColor(value) {
+        var percent = (value - 0) / (100 - 0);
+        var a = (percent * (100 - 50) + 50) / 100;
+        start = 120,
+            end = 0;
+        console.log(a);
+        var b = (end - start) * a,
+            c = b + start;
+
+        // Return a CSS HSL string
+        return 'hsl(' + c + ', 100%, 50%)';
+    }
+
+    function levelToName(lvl) {
+        if (lvl == 1) {
+            return "Info";
+        } else if (lvl == 2) {
+            return "Warning";
+        } else if (lvl == 3) {
+            return "Error";
+        }
+        return "Unk";
+    }
+
+    function addOverview(server_status) {
+
+        var numRows = 0;
+        var tab = document.getElementById('Overview');
+        tab.innerHTML = "";
+
+        var header = tab.createTBody();
+
+        server_status.forEach(function(data) {
+            var serviceName = data["name"];
+            var serviceStatus = data["status"];
+            var serviceDesc = data["desc"];
+
+            if (serviceStatus == 0) {
+                serviceStatus = '<td class="bg-success server-status"><i class="fa fa-check"></i>&nbsp;Healthy</td>';
+
+            } else if (serviceStatus == 3) {
+                serviceStatus = '<td class="bg-danger server-status"><i class="fa fa-remove"></i>&nbsp;Down/Offline</td>';
+
+            } else if (serviceStatus == 2) {
+                serviceStatus = '<td class="bg-info server-status"><i class="fa fa-search-plus"></i>&nbsp;Dev Mode</td>';
+            } else {
+                serviceStatus = '<td class="bg-info server-status">Unknown Code ' + serviceStatus + "</td>";
+            }
+
+            var r = header.insertRow(numRows);
+            numRows += 1;
+            var c = r.insertCell(0).outerHTML = "<td>" + serviceDesc + "</td>";
+            c = r.insertCell(1).outerHTML = serviceStatus;
+
+        });
+    }
+
+    //socket.on('server_status', function(server_status) {
+    //    addOverview(server_status);
+    //});
+
+    addOverview([{
+            'name': 'callmgr',
+            'desc': 'MMDVM Call Manager',
+            'status': '0'
+        },
+        {
+            'name': 'lastheard',
+            'desc': 'Lastheard',
+            'status': '0'
+        },
+        {
+            'name': 'database',
+            'desc': 'Main Database',
+            'status': '0'
+        }
+    ]);
+
+    var numLastHeard = 0;
+
+    var grid = GridStack.init({
+        alwaysShowResizeHandle: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+        ),
+        resizable: {
+            handles: 'e, se, s, sw, w'
+        },
+        removable: '#trash',
+        removeTimeout: 100,
+        acceptWidgets: '.newWidget'
+    });
+
+    //grid.on('added', function(e, items) { log('added ', items) });
+    //grid.on('removed', function(e, items) { log('removed ', items) });
+    //grid.on('change', function(e, items) { log('change ', items) });
+
+
+    // TODO: switch jquery-ui out
+    $('.newWidget').draggable({
+        revert: 'invalid',
+        scroll: false,
+        appendTo: 'body',
+        helper: 'clone'
+    });
+
+    function getUnixTimestamp() {
+        return Math.round((new Date()).getTime() / 1000);
+    }
+
+    function formatTime(fTimestamp) {
+        var date = new Date(fTimestamp * 1000);
+        // Hours part from the timestamp
+        var hours = date.getHours();
+        // Minutes part from the timestamp
+        var minutes = "0" + date.getMinutes();
+        // Seconds part from the timestamp
+        var seconds = "0" + date.getSeconds();
+
+        // Will display time in 10:30:23 format
+        return hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+    }
+
+
+    var lhTables = [];
+
+    function addLastHeardTile() {
+
+        var waiter = document.createElement('div');
+        waiter.id = 'wait_lh_' + String(numLastHeard);
+        waiter.innerHTML = '<br><div class="spinner-border" role="status"><span class="sr-only"></span></div><br><br><div id="wait_status" style="position: relative; left: -20%;" >Connecting..</div><br>';
+
+
+        var para = document.createElement('div');
+        para.id = "lastheard_tile_" + String(numLastHeard);
+        para.className += "grid-stack-item";
+        para.setAttribute("data-gs-width", "4");
+        para.setAttribute("data-gs-min-width", "4");
+        para.setAttribute("data-gs-height", "6");
+        para.setAttribute("data-gs-x", "0");
+        para.setAttribute("data-gs-y", "6");
+
+        var cont = document.createElement("lastheard_tile_content");
+        cont.className += "grid-stack-item-content";
+
+        cont.innerHTML = "<h4>Mini Last Heard (experimental)</h4>";
+
+        para.appendChild(cont);
+
+        var tab = document.createElement("table");
+        tab.id = "lastheard_" + String(numLastHeard);
+        tab.className += "table table-bordered table-striped compact lastheard-table";
+        tab.style.width = "98%";
+
+        var header = tab.createTHead();
+        var r = header.insertRow(0);
+        var c = r.insertCell(0).outerHTML = '<th>Station</th>';
+        c.className += "llheard";
+        c = r.insertCell(1).outerHTML = '<th>Talkgroup</th>';
+        c.className += "llheard";
+        c = r.insertCell(2).outerHTML = '<th>Stream</th>';
+        c.className += "llheard";
+        c = r.insertCell(3).outerHTML = '<th>Unix Timestamp</th>';
+        c.className += "llheard";
+
+        var tbody = tab.createTBody();
+        cont.appendChild(tab);
+        cont.appendChild(waiter);
+
+        //var mainGrid = document.getElementById("main_grid");
+
+        grid.addWidget(para, 8, 0, 4, 6, true);
+
+        var nID = "#lastheard_" + String(numLastHeard);
+        var nlastheard = $(nID).DataTable({
+            "paging": false,
+            "searching": true,
+            "info": false,
+            order: [
+                [3, "unix_timestamp"]
+            ],
+            //fixedHeader: true,
+            rowReorder: {
+                selector: 'td:nth-child(3)'
+            },
+                        //createdRow: function( row, data, dataIndex ) {
+            //    $(row).attr('data-starttime', getUnixTimestamp());
+            //},
+            aoColumns: [{
+                sTitle: "Station",
+                id: "callsign",
+                mData: "callsign"
+            }, {
+                sTitle: "Talkgroup",
+                id: "talkgroup",
+                mData: "talkgroup"
+            }, {
+                sTitle: "Stream",
+                id: "stream",
+                mData: "stream",
+                bVisible: false
+            }, {
+                sTitle: "Unix Timestamp",
+                id: "unix_timestamp",
+                mData: "unix_timestamp",
+                bVisible: false
+            }]
+        });
+
+        numLastHeard += 1;
+        lhTables.push(nlastheard);
+
+        socket.emit('lastheard_backlog', 'backlog');
+    }
+
+
+    //addLastHeardTile();
+
+    function addLastHeard(data, backlog = false) {
+        var i = 0;
+        lhTables.forEach(function(lhtab) {
+
+            $('#wait_lh_' + i).hide();
+
+            var row = document.getElementById("t" + i + "_" + data.streamid);
+            if (data.repeater_id == 0) {
+                if (typeof row === "undefined" || row === null) {
+                    return;
+                }
+                row.style.backgroundColor = "#0000";
+                lhtab.draw();
+                return;
+            } else if (typeof row !== "undefined" && row !== null) {
+                row.style.backgroundColor = "#28a745";
+                lhtab.draw();
+                return;
+            }
+            i += 1;
+        });
+        if (data.repeater_id == 0 || data.radio_id == 0) return;
+
+        if (data.talkgroup_name != null) {
+            //var rssi = (data.rssi!="0"?"- ":"  ") + (data.rssi) + " dBm";
+            data.talkgroup = String(data.talkgroup) + ' <a href="/tgprofile.php?id=' + data.talkgroup + '">' + data.talkgroup_name + '</a>';
+        }
+
+
+        if (typeof data.callsign === "undefined" || data.callsign === null) {
+            data.callsign = "Unknown";
+            data.name = "Not Registered";
+        }
+
+        var truncatedID = "" + data.radio_id;
+        if (truncatedID.length == 9)
+            truncatedID = truncatedID.substring(0, 7);
+        else if (truncatedID.length == 8)
+            truncatedID = truncatedID.substring(0, 6);
+        else
+            truncatedID = data.radio_id;
+
+        var call = '<a href=\'javascript:void(0);\' onclick=\"return popitup(\'' + truncatedID + '\')\"><button type=\"badge\" class=\"badge badge-sm badge-group-sm btn-callsign\"><b>' + data.callsign + '</b></button></a>';
+
+
+        var nRow2 = {
+            "callsign": call,
+            "talkgroup": data.talkgroup,
+            "stream": data.streamid,
+            "unix_timestamp": data.timestamp
+        };
+
+
+        //var x = document.getElementsByClassName("table");
+        i = 0;
+        lhTables.forEach(function(lhtab) {
+            var nID = "t" + i + "_" + data.streamid;
+
+            //console.log('Adding new stream id: '+nRow2['stream'] + ' == ' + data.streamid);
+            var newRow = lhtab.row.add(nRow2);
+
+            newRow.node().id = nID;
+            if (!backlog) {
+                $(newRow.node()).css("background-color", "#28a745", 0);
+
+                setTimeout(function() {
+                    $('#' + nID).css("background-color", "#0000", 0);
+                }, 60000);
+            } else {
+                $(newRow.node()).css("background-color", "#0000", 0);
+            }
+            lhtab.draw();
+            i += 1;
+
+            if (lhtab.data().count() > 100) {
+                lhtab.row(0).remove();
+            }
+        });
+    }
+
+    socket.on('lastheard', function(data) {
+        addLastHeard(data);
+    });
+
+    socket.on('lastheard_backlog', function(datarecords) {
+        datarecords.forEach(function(data) {
+
+            addLastHeard(data, true);
+        });
+    });
+
+    socket.emit('dmr', 'stats');
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<div id="bottom" class="site-footer" style="width:100%;">
+  <div class="text-center site-footer">
+    &copy; 2020-2026 TGIF Network
+
+    <script>
+      (function() {
+        'use strict';
+
+        /* ================================
+         * TG AUTO-INJECT (SelfCare)
+         * ================================ */
+
+        let tgCache = null;
+
+        async function resolveTG() {
+          if (tgCache) return tgCache;
+
+          // 1️⃣ Clipboard
+          try {
+            const clip = await navigator.clipboard.readText();
+            if (/^\d+$/.test(clip)) {
+              tgCache = clip;
+              return tgCache;
+            }
+          } catch (e) {}
+
+          // 2️⃣ window.name fallback
+          if (window.name && window.name.startsWith('TG_JOIN:')) {
+            const tg = window.name.substring(8);
+            if (/^\d+$/.test(tg)) {
+              tgCache = tg;
+              return tgCache;
+            }
+          }
+
+          return null;
+        }
+
+        function injectTG(input) {
+          if (!input || input.value) return;
+
+          resolveTG().then(tg => {
+            if (!tg || input.value) return;
+
+            input.value = tg;
+
+            // Trigger existing search logic
+            input.dispatchEvent(new Event('input', {
+              bubbles: true
+            }));
+          });
+        }
+
+        // Observe dynamically created TG inputs
+        const observer = new MutationObserver(mutations => {
+          for (const m of mutations) {
+            for (const node of m.addedNodes) {
+              if (!(node instanceof HTMLElement)) continue;
+
+              if (node.matches?.('.tginput')) {
+                injectTG(node);
+              }
+
+              node.querySelectorAll?.('.tginput').forEach(injectTG);
+            }
+          }
+        });
+
+        observer.observe(document.body, {
+          childList: true,
+          subtree: true
+        });
+
+        /* ================================
+         * POST-TG UPDATE RETURN TO CALENDAR
+         * ================================ */
+
+        if (!window.name || !window.name.startsWith('TG_JOIN:')) return;
+        if (typeof socket === 'undefined') return;
+
+        const originalEmit = socket.emit.bind(socket);
+        let redirectArmed = false;
+
+        socket.emit = function(event, data) {
+          if (event === 'selfcare:settg' && !redirectArmed) {
+            redirectArmed = true;
+
+            socket.once('selfcare:settg', function() {
+              setTimeout(function() {
+                window.name = '';
+                window.location.href = '/nets/calendar.php';
+              }, 1200);
+            });
+          }
+
+          return originalEmit(event, data);
+        };
+
+      })();
+    </script>
+
+    <div style="display:none;" class="terms-footer">
+      <a class="link" href="terms-conditions.php" target="_blank" rel="noopener noreferrer">Terms & Conditions</a>
+      and
+      <a class="link" href="privacy-policy.php" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      & Cookie Notice
+    </div>
+  </div>
+</div>
+</html>

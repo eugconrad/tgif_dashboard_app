@@ -1,0 +1,1341 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TGIF Network - Last Heard</title>
+    <meta name="description" content="TGIF Network - Last Heard">
+    <meta name="keywords" content="TGIF, TGIF Network, DMR, hotspot, mmdvm, lastheard, lastheard, pistar, pi-star, brandmeister" />
+
+    <!-- CSS - Javascripts for nav bar and main pages-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <noscript>Sorry, TGIF Network requires JavaScript to be enabled.</noscript>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/css/datatables.min.css" />
+    <script type="text/javascript" src="/assets/js/datatables.min.js"></script>
+    <!-- Start of scrollin text -->
+    <!--   <marquee behavior="scroll" direction="left" scrollamount="8"><h3><b><font color=green><i class="fa fa-bell"></i> Hello TGIF Members</b></font> - <strong>TGIF Server Funding Time is here again please donate</strong></h3></marquee> -->
+    <!-- End of scrollin text -->
+    <!-- Start of Navbar -->
+
+
+    <nav role="navigation" class="navbar navbar-dark navbar-expand-sm sticky-top bg-dark text-monospace text-capitalize text-left">
+        <div class="container-fluid tgifnav">
+            <button id="move-right" data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span></button>
+            <a class="navbar-brand" href="/index.php">TGIF Network
+            </a>
+
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+
+
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" aria-label=" Monitoring"> Monitoring</a>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" role="presentation" href="/lastheard.php" >Last Heard</a>
+                            <a class="dropdown-item" role="presentation" href="/activetg.php" >Active Talkgroups</a>
+                            <a class="dropdown-item" role="presentation" href="/talkgroups.php" >Talkgroup List</a>
+                            <a class="dropdown-item" role="presentation" href="/talkgroup_stats.php" >Talkgroup 30 day Stats</a>
+                            <a class="dropdown-item" role="presentation" href="/status.php" >Server Status</a>
+                            <a class="dropdown-item" role="presentation" href="/Lh-Map.php" >Last Heard Beta Map</a>
+
+
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"
+                            href="/nets/calendar.php"
+                            data-toggle="dropdown"
+                            aria-expanded="false">
+
+                            <i class="fas fa-calendar-alt"></i>
+                            TGIF Nets
+
+                            
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" style="min-width:300px;">
+
+                            <!-- Timezone display -->
+                            <div class="dropdown-header small">
+                                <i class="fas fa-globe"></i>
+                                Timezone
+                                (<span id="userTz"></span>)
+                            </div>
+
+                            
+                                    <!-- ================= NO NETS ================= -->
+                                    <div class="px-3 py-2 text-muted text-center">
+                                        No nets starting in the next 90 minutes
+                                    </div>
+
+                                    <div class="dropdown-divider"></div>
+
+                                
+                                <!-- ================= CALENDAR LINK ================= -->
+                                <a class="dropdown-item text-center" href="/nets/calendar.php">
+                                    View Full Calendar →
+                                </a>
+
+                                </div>
+                    </li>
+
+
+
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" aria-label=" help">Help</a>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" role="presentation" aria-label="" href="/help.php">TGIF Setup</a>
+                            <a class="dropdown-item" role="presentation" href="/faq.php" >FAQ</a>
+                            <a class="dropdown-item" role="presentation" href="https://tgifnetwork.createaforum.com/index.php" target="_blank">Forum</a>
+                            <a class="dropdown-item" role="presentation" href="/helpvid.php" target="_blank">Video Knowledge Base</a>
+                            <a class="dropdown-item" role="presentation" href="/disclaimer.php">Disclaimer</a>
+                            <a class="dropdown-item" role="presentation" href="/privacy-policy.php">Privacy-Policy</a>
+                            <a class="dropdown-item" role="presentation" href="/terms-conditions.php">Terms-Conditions</a>
+
+                        </div>
+                    </li>
+
+                                        <!--<li class="nav-item" role="presentation"><a href="support@tgif.network" class="nav-link active">Contact Us</a></li>-->
+
+
+                </ul>
+
+
+            </div>
+            <div class="move-right nav-item dropdown">
+                <a class="dropdown-toggle nav-link move-left" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-portrait size"></i>
+                    Registration</a><div class="dropdown-menu" role="menu"><a class="dropdown-item " role="presentation" href="/signin.php">Sign In</a><a class="dropdown-item" role="presentation" href="/signin.php#signup">Register</a></div>
+
+                    <!-- </li> -->
+            </div>
+        </div>
+    </nav>
+    <script type="text/javascript" src="/assets/js/togglermenu.js"></script>
+    <!-- End Navbar -->
+    <link rel="stylesheet" href="/assets/css/themes/default.css" />
+    <link rel="stylesheet" href="/assets/css/themes/globals.css" />
+    <link rel="stylesheet" href="/assets/css/header2.css" />
+
+    <script>
+        /* =========================================================
+         * TGIF COUNTDOWN CORE (HEADER + CALENDAR SHARED)
+         * PHP 7.3 SAFE – NO NEW FILES
+         * ======================================================= */
+        (function(window, document) {
+            'use strict';
+
+            if (window.__TGIF_HEADER_UI__) return;
+            window.__TGIF_HEADER_UI__ = true;
+
+            /* -----------------------------------------------------
+             * Shared countdown formatter
+             * --------------------------------------------------- */
+            var TGIFCountdown = {
+                format: function(seconds) {
+                    if (seconds <= 0) return 'ENDED';
+
+                    // Round UP to the next minute (matches calendar)
+                    var totalMin = Math.ceil(seconds / 60);
+
+                    var h = Math.floor(totalMin / 60);
+                    var m = totalMin % 60;
+
+                    if (h > 0) {
+                        return h + 'h ' + m + 'm remaining';
+                    }
+
+                    return totalMin + 'm remaining';
+                }
+            };
+
+            window.TGIFCountdown = TGIFCountdown;
+
+            /* -----------------------------------------------------
+             * Tooltip init (defensive)
+             * --------------------------------------------------- */
+            function initTooltips() {
+                if (!window.jQuery) return;
+                if (!jQuery.fn || typeof jQuery.fn.tooltip !== 'function') return;
+                jQuery('[data-toggle="tooltip"]').tooltip();
+            }
+
+            /* -----------------------------------------------------
+             * Timezone display
+             * --------------------------------------------------- */
+            function setUserTimezone() {
+                try {
+                    if (!window.Intl) return;
+                    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                    var el = document.getElementById('userTz');
+                    if (el && tz) el.textContent = tz;
+                } catch (e) {}
+            }
+
+            /* -----------------------------------------------------
+             * LIVE net updater (header)
+             * --------------------------------------------------- */
+            function updateLiveCountdowns() {
+                if (!window.jQuery) return;
+
+                var now = Math.floor(Date.now() / 1000);
+                var liveCount = 0;
+
+                jQuery('.live-net').each(function() {
+                    var end = parseInt(this.dataset.endTs, 10);
+                    if (!end) return;
+
+                    var remaining = end - now;
+                    var label = jQuery(this).find('.live-countdown');
+
+                    if (remaining <= 0) {
+                        jQuery(this).remove(); // 🔥 auto-remove ended nets
+                        return;
+                    }
+
+                    label
+                        .text(TGIFCountdown.format(remaining))
+                        .removeClass('text-muted')
+                        .addClass('text-danger');
+
+                    liveCount++;
+                });
+
+                // If no live nets left → remove LIVE badge
+                if (liveCount === 0) {
+                    jQuery('.navbar .badge-danger').remove();
+                    jQuery('#live-nets-section').remove(); // ✅ single source of truth
+                }
+
+            }
+
+            /* -----------------------------------------------------
+             * DOM ready helper
+             * --------------------------------------------------- */
+            function onReady(fn) {
+                if (document.readyState === 'complete' ||
+                    document.readyState === 'interactive') {
+                    setTimeout(fn, 0);
+                } else {
+                    document.addEventListener('DOMContentLoaded', fn);
+                }
+            }
+
+            /* -----------------------------------------------------
+             * Init
+             * --------------------------------------------------- */
+            onReady(function() {
+                initTooltips();
+                setUserTimezone();
+                updateLiveCountdowns();
+
+                // Faster updates near end, still cheap
+                setInterval(updateLiveCountdowns, 1000);
+            });
+
+        })(window, document);
+    </script>
+    <link rel="stylesheet" href="/assets/css/tgifmodal.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="/assets/js/jquery-confirm/css/jquery-confirm.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="/assets/js/jquery-confirm/dist/jquery-confirm.min.js"></script>
+    <script src="/assets/js/socket.io.js"></script>
+    <script src="/assets/js/ip_utils.js"></script>
+    <script src="/assets/js/lastheard.js"></script>
+    <script src="/assets/js/lh_session_cache.js"></script>
+
+<style>
+
+/* Buttons for Site  */
+button.btn.btn-sm.btn-group-sm.btn-callsign.legacy {
+    background-color: var(--CSButtonlegacy);
+    color: var(--CSButtonlegacyText);
+}
+
+.btn-callsign {
+    padding: 2px 10px 2px 10px;
+    margin-right: 13px;
+    margin-left: 0;
+    font-size: 14px;
+    line-height: 15px;
+    border-radius: 1.2rem;
+    color: var(--CallSignButtonText);
+    background-color: var(--CallSignButton);
+}
+
+.btn-talkgroup {
+    padding: 2px 10px 2px 10px;
+    margin-right: 13px;
+    margin-left: 0;
+    font-size: 14px;
+    line-height: 15px;
+    border-radius: 5px;
+    color: var(--TGButtonText);
+    background-color: var(--TGSignButton);
+}
+.btn-talkgroup:hover {
+    padding: 2px 10px 2px 10px;
+    margin-right: 13px;
+    margin-left: 0;
+    font-size: 14px;
+    line-height: 15px;
+    border-radius: 5px;
+    color: var(--TGButtonTextHover);
+    background-color: var(--TGSignButtonHover);
+}
+
+.btn:hover {
+    color: var(--Dark-text);
+    text-decoration: none;
+    background-color: var(--hyperlinkhover);
+}
+
+
+/* end of button with callsign lh */
+
+
+/* pause button on lhd start */
+
+.myButton {
+    width: inherit;
+    padding: 5px;
+    background-color: #f70303;
+    box-sizing: border-box;
+}
+
+.pause {
+    height: calc(1.5em + 0.5rem + 2px);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+    box-sizing: border-box;
+}
+
+
+/* Pause button lh end */
+.fas.fa-bolt {
+	color: yellow;
+}
+.jconfirm-buttons {
+    float: left;
+}
+button#myPause {
+    height: calc(1.5em + 0.5rem + 7px);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+    box-sizing: border-box;
+}
+ button.badge.badge-primary.confirm1 {
+    margin-left: 10px;
+    margin-right: 5px;
+    color: var(--ACLButtontext);
+    background-color: var(--ACLButton);
+}
+
+button.badge.badge-primary.confirm1:hover {
+    margin-left: 10px;
+    margin-right: 5px;
+    color: var(--ACLButtontextHover);
+    background-color: var(--ACLButtonHover);
+}
+
+.jconfirm.jconfirm-white .jconfirm-box, .jconfirm.jconfirm-light .jconfirm-box {
+	-webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+	box-shadow: 3px 2px 6px rgb(71, 144, 174);
+	border-radius: 5px;
+	background-color: #353635;
+}
+
+.jconfirm .jconfirm-box .jconfirm-buttons {
+	padding-bottom: 11px;
+	/* margin-right: 166px; */
+    margin-left: 10px;
+}
+/* trafficlights */
+.traffic-light {
+    height: 0px;
+    width: 0px;
+    margin-top: -42px;
+    margin-left: -13px;
+
+
+}
+
+ .bulb {
+	height: 10px;
+	width: 11px;
+	/* background-color: black; */
+	/* border-radius: 50%; */
+	margin: 4px 5px 5px 5px;
+}
+
+.bulb.red {
+    font-size: 11px;
+    color: red;
+    margin-left: 4px;
+    display: none;
+}
+
+.bulb.amber {
+    font-size: 11px;
+    color: yellow;
+    margin-left: 4px;
+    display: none;
+}
+
+.bulb.green {
+    font-size: 11px;
+    color: #00ff4c;
+    margin-left: 4px;
+    display: none;
+}
+
+/* end */
+
+
+
+#call {
+  top: -44px;
+  position: relative;
+  background-color: chartreuse
+}
+
+
+ a {
+	  text-decoration: none;
+	  color: var(--hyperlink);
+	 /*  text-decoration: underline; */
+	  }
+
+  a:hover {
+	  color: var(--hyperlinkhover);
+	 /*  text-decoration: underline; */
+  }
+
+.dataTables_wrapper no-footer{
+color: black;
+}
+
+div.dataTables_wrapper div.dataTables_info {
+	padding-top: 0.85em;
+	white-space: pre-wrap;
+}
+
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: var(--LH-Text);
+  background-color: var(--LhTableBG);
+}
+
+table.dataTable.compact tbody th, table.dataTable.compact tbody td {
+	border-radius: 0.2px;
+	box-shadow: var(--box-shadow);
+}
+
+ table.dataTable.compact thead th, table.dataTable.compact thead td {
+   padding: 4px 1px 5px 5px;
+   border-radius: 0.2px;
+   box-shadow: var(--box-shadow);
+   vertical-align: middle;
+}
+
+/*
+	Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
+	*/
+	@media
+	  only screen
+    and (max-width: 600px), (min-device-width: 600px)
+    and (max-device-width: 600px)  {
+
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr {
+			display: block;
+		}
+        .parent {
+    display: inline-flex;
+}
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+
+    tr {
+      margin: 0 0 1rem 0;
+    }
+
+    tr:nth-child(odd) {
+      background: rgb(0, 0, 0);
+    }
+
+		td {
+			/* Behave  like a "row" */
+			border: none;
+			border-bottom: 1px solid #eee;
+			position: relative;
+			padding-left: 50%;
+		}
+
+    td::before {
+      position: relative;
+      top: 0;
+      left: 6px;
+      width: 45%;
+      padding-right: 5px;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 0.5;
+      color:white ;
+      text-align: left;
+    }
+
+		/*
+		Label the data on mobile view
+    You could also use a data-* attribute and content for this.
+     That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync.
+     that handles the text-shadow.
+		*/
+		td:nth-of-type(1):before { content: ""; }
+		td:nth-of-type(2):before { content: "Name: "; }
+		td:nth-of-type(3):before { content: "DMR ID (Repeater ID): "; }
+		td:nth-of-type(4):before { content: "Talkgroup: "; }
+		td:nth-of-type(5):before { content: "Timestamp: "; }
+		td:nth-of-type(6):before { content: "RSSI: "; }
+
+  }
+
+/* Clear floats after the columns */
+ .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop
+{
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop
+{
+  from
+  {
+    top: -300px;
+    opacity: 0
+  }
+
+  to
+  {
+    top: 0;
+    opacity: 1
+  }
+}
+
+.jconfirm.jconfirm-black .jconfirm-box .jconfirm-buttons button, .jconfirm.jconfirm-dark .jconfirm-box .jconfirm-buttons button {
+	border: none;
+	background-image: none;
+	text-transform: initial;
+	font-size: 14px;
+	font-weight: inherit;
+	text-shadow: none;
+	-webkit-transition: background .1s;
+	transition: background .1s;
+	color: black;
+	width: 124PX;
+}
+
+
+tr.ripple {
+    -webkit-animation: pulse 1s infinite;
+    -moz-animation: pulse 1s infinite;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    from, to { box-shadow: 0 0 0 0 #ff0000;
+        position: relative;}
+    80% { box-shadow: 0 0 0 3px #ff0000;
+        position: relative;
+    }
+
+}
+@-webkit-keyframes pulse {
+    from, to { box-shadow: 0 0 0 0 #ff0000;
+        position: relative;}
+    80% { box-shadow: 0 0 0 3px #ff0000;
+        position: relative;
+    }
+
+}
+@-moz-keyframes pulse {
+    from, to { box-shadow: 0 0 0 0 #ff0000;
+        position: relative;}
+    80% { box-shadow: 0 0 0 3px #ff0000;
+        position: relative;
+    }
+
+}
+</style>
+
+</head>
+
+<body>
+        <div class="MainWrapper" id="wrapper">
+                  <div id="stationInfo" class="modal" style="overflow-x: auto;">
+                  <div class="modal-dialog modal-dialog" role="document">
+                    <div class="modal-content">
+                          <div class="modal-header">
+                             <h3>Station Info</h3> <span class="close"><button type="button" class="btn btn-success">Close</button></span>
+
+                          </div>
+                        <div id="modalInfo" class="modal-body">
+                            <p>Radio ID: 1234567</p><p>
+                            </p><p>Callsign: ABCDEF</p><p>
+                            </p><p>Name: </p><p>
+                            </p><p>City: </p><p>
+                            </p><p>State: </p><p>
+                            </p><p>Country: </p><p>
+                            </p><p>Mode: </p><p>
+                            </p><p>Device: </p><p>
+                            </p><p>QRZ Lookup: </p>
+                        </div>
+
+                     </div>
+                </div>
+        </div>
+
+                <div id="wait" style="left: 49%; position: fixed; z-index: 2; top: 15%;">
+            <br>
+                <div class="spinner-border" role="status"><span class="sr-only"></span></div><br><br><div id="wait_status" style="position: relative; left: -20%;" >Connecting..</div>
+            <br>
+        </div>
+
+        <div id="lh-content">
+                <div id="stats"></div>
+
+
+
+                   <button type="button" id="myPause" onclick="togglePause()" data-toggle="tooltip" data-placement="top" title="Pause stop and start button" class="pause float-right"><i class="fa fa-pause" aria-hidden="true"></i></button>
+
+
+
+                   <table id="lastheard" class="table table-bordered table-striped display compact" style="width: 99%;">
+                         <thead>
+		                    <tr>
+                                <th>Callsign</th>
+                                <th>Name</th>
+                                <th>DMR ID (Repeater ID)</th>
+                                <th>Talkgroup</th>
+                                <th>Timestamp</th>
+                                <th>Stream</th>
+                                <th>RSSI</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                         </thead>
+                        <tbody>
+                        </tbody>
+                  </table>
+
+            </div>
+        </div>
+
+
+<script src="/assets/js/session.js"></script>
+<script>
+var modal = document.getElementById('stationInfo');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+var tableBtn = document.getElementById("tableBtn");
+
+var span = document.getElementsByClassName("close")[0];
+
+var socket = io('https://' + window.location.host, {
+    transports: ['websocket'],
+    reconnection: true,
+    reconnectionAttempts: Infinity,
+    reconnectionDelay: 1000,
+    reconnectionDelayMax: 5000,
+    timeout: 20000,
+    pingInterval: 10000,
+    pingTimeout: 5000
+});
+
+
+var connection_state = 0;
+
+function isDefined(val) {
+    return (typeof val !== 'undefined' && val !== null);
+}
+
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+function int2ip (ipInt) {
+    return ( (ipInt>>>24) +'.' + (ipInt>>16 & 255) +'.' + (ipInt>>8 & 255) +'.' + (ipInt & 255) );
+}
+
+function popitup(radio_id)
+{
+
+
+    $.getJSON('https://dmr.g7lrr.com/new/getcall.php?dmr_id=' + radio_id, function(j){
+
+        var modalContent = "<div><div style:\"float: left;\">";
+        modalContent += "<p>Radio ID: " + j['radio_id'] + "</p>";
+        modalContent += "<p>Callsign: " + j['callsign'] + "</p>";
+        modalContent += "<p>Name: " + j['name'] + "</p>";
+        modalContent += "<p>City: " + j['city'] + "</p>";
+        modalContent += "<p>State: " + j['state'] + "</p>";
+        modalContent += "<p>Country: " + j['country'] + "</p>";
+        modalContent += "<p><a target='new' href=https://www.qrz.com/db/"+ j['callsign'] + ">"+ " QRZ Lookup For " + j['callsign'] +"</a></p>";
+        modalContent += "</div><div>";
+        if(j['image'] != null && j['image'].length >0 ){
+            modalContent += "<img class=\"imageframe\" src=\""+j['image']+"\"></img></div>© 2020 - TGIF Network</div>"
+        }else{
+            modalContent += "</div></div>";
+        }
+
+        var modalInfo = document.getElementById('modalInfo');
+        modalInfo.innerHTML = modalContent;
+
+        var modalz = document.getElementById('stationInfo');
+        modalz.style.display = "block";
+    });
+
+    return false;
+}
+
+
+
+var lastheard=$('#lastheard').DataTable({
+    "pagingType": "simple",
+    "ordering":true,
+    "bAutoWidth": false,
+    "info": true,
+    "search": { "regex": true } ,
+    "iDisplayLength": 25,
+    //"oSearch": {"sSearch": "31458" },  //filter using regex pattern
+    order: [[ 7, "desc" ]],
+    //fixedHeader: true,
+    rowReorder: {
+            selector: 'td:nth-child(2)'
+    },
+
+    createdRow: function( row, data, dataIndex ) {
+        $(row).attr('data-starttime', getUnixTimestamp());
+
+        var aclbtn = row.getElementsByTagName("td")[0].getElementsByTagName("button");
+        if(aclbtn.length>1){
+            aclbtn = aclbtn[0];
+            createAclBtnEvent(aclbtn, data);
+        }
+    },
+
+
+    aoColumns: [
+        {
+            sTitle: "Callsign",
+            sWidth: "15%",
+            id: "callsign",
+            mData: "callsign"
+        },{
+            sTitle: "Name",
+            id: "name",
+            mData: "name"
+        },{
+            sTitle: "DMR ID (Repeater ID)",
+            id: "radio_id",
+            mData: "radio_id"
+        },{
+            sTitle: "Talkgroup",
+            id: "talkgroup",
+            mData: "talkgroup"
+        },{
+            sTitle: "Timestamp",
+            id: "timestamp",
+            mData: "timestamp"
+        },{
+            sTitle: "Stream",
+            id: "stream",
+            mData: "stream",
+            bVisible: false
+        },{
+            sTitle: "RSSI",
+            id: "rssi",
+            mData: "rssi"
+        },{
+            sTitle: "Unix Timestamp",
+            id: "unix_timestamp",
+            mData: "unix_timestamp",
+            bVisible: false
+        },{
+            id: "repeater_id",
+            mData: "repeater_id",
+            bVisible: false
+        }
+    ]
+});
+
+var api_token = '';lastheard.on('search.dt', function() {
+    var value = $('.dataTables_filter input').val();
+    const url = new URL(window.location.href);
+    url.searchParams.delete('search');
+    if(value.length)
+        url.searchParams.set('search', value);
+    window.history.replaceState(null, null, url); // or pushState
+});
+
+
+socket.on('connect', function () {
+    $('#wait').show();
+    $('#wait_status').text('Loading..');
+    connection_state=1;
+    socket.emit('handshake', api_token);
+    setTimeout(function(){
+        if(connection_state <3){
+            $('#wait').empty();
+            $('#wait').text('None');
+        }
+    },5000);
+});
+
+socket.on('status', function(data) {
+    //console.log(data);
+    if(data == 200){ //success
+        connection_state = 2;
+        $('#wait_status').text('Syncing..');
+        //console.log("Authentication Successful!");
+        var msg={ "scope": "*", "page": "lastheard", "action": "lh-backlog" };socket.emit("cli-state", msg);    }else{
+        //fail
+        connection_state = 0;
+        $('#wait').empty();
+        $('#wait').text('Failed');
+    }
+});
+
+socket.on('disconnect', (reason) => {
+    connection_state = 0;
+    $('#wait').show();
+    $('#wait_status').text('Reconnecting..');
+    if (reason === 'io server disconnect') {
+        // the disconnection was initiated by the server, you need to reconnect manually
+        socket.connect();
+    }
+    // else the socket will automatically try to reconnect
+});
+
+socket.on('error', (error) => {
+    console.log('Socket.IO Error: ' + error);
+});
+
+socket.on('connect_error', (error) => {
+    connection_state = 0;
+
+    console.log('Socket.IO Connect Error: ' + error);
+    $('#wait').empty();
+    $('#wait').text('Error connecting');
+});
+
+socket.on('connect_timeout', (timeout) => {
+    connection_state = 0;
+    console.log('Socket.IO Connect Timeout: ' + timeout);
+    $('#wait').empty();
+    $('#wait').text('Error connecting');
+});
+
+socket.on('reconnect', (attemptNumber) => {
+
+});
+
+
+function clearTG(fTG) {
+    $("tr[data-tig='"+fTG+"']").css("background-color", "#f8f9fa", 0);
+	$("tr[data-tg='"+fTG+"']").each(function() {
+        if($(this).attr("data-stoptime")) {
+            //console.log("don't remove row "+fTG);
+        } else {
+            lastheard.rows($(this)).remove().draw();
+            //console.log("remove row "+fTG);
+        }
+    });
+}
+function getUnixTimestamp()
+{
+    return Math.round((new Date()).getTime() / 1000);
+}
+
+function formatTime(fTimestamp)
+{
+    var date = new Date(fTimestamp*1000);
+    // Hours part from the timestamp
+    var hours = date.getHours();
+    // Minutes part from the timestamp
+    var minutes = "0" + date.getMinutes();
+    // Seconds part from the timestamp
+    var seconds = "0" + date.getSeconds();
+
+    // Will display time in 10:30:23 format
+    return hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+}
+
+function getColor(value){
+  var percent = (value - 0) / (100 - 0);
+  var a = (percent * (100 - 50) + 50) / 100;
+  start = 120,
+    end = 0;
+  console.log(a);
+  var  b = (end - start) * a,
+      c = b + start;
+
+  // Return a CSS HSL string
+  return 'hsl('+c+', 100%, 50%)';
+}
+
+function sigMeter(rssi,ber) {
+  var value
+  var value2 = false;
+  if (ber == -1 || ber == "-1" || ber == undefined || ber == "undefined")
+    value2 = "";
+  else
+  {
+    ber = parseFloat(ber);
+    var percentBer = Math.round(ber*100);
+    if (ber == 0)
+      value2 = "<span title=\"BER 0%\"style=\"color: white\"></span>";
+    else if (ber > 0 && ber < 0.33)
+      value2 = "<span title=\"BER "+percentBer+"% \"style=\"color: "+getColor(percentBer)+"\">"+percentBer+"% - </span>";
+    else
+      value2 = "<span title=\"BER "+percentBer+"%\"style=\"color: "+getColor(percentBer)+"\">"+percentBer+"% - </span>";
+  }
+
+  rssi=rssi*-1;
+
+  if (rssi == 0 || rssi == "0" || rssi == undefined) value = "";
+  else if (rssi > -33) value = '<img src="/assets/signal/5.png" \> S9+60dB';
+  else if (rssi > -43) value = '<img src="/assets/signal/5.png" \> S9+50dB';
+  else if (rssi > -53) value = '<img src="/assets/signal/4.png" \> S9+40dB';
+  else if (rssi > -63) value = '<img src="/assets/signal/4.png" \> S9+30dB';
+  else if (rssi > -73) value = '<img src="/assets/signal/3.png" \> S9+20dB';
+  else if (rssi > -83) value = '<img src="/assets/signal/3.png" \> S9+10dB';
+  else if (rssi > -93) value = '<img src="/assets/signal/3.png" \> S9';
+  else if (rssi > -99) value = '<img src="/assets/signal/3.png" \> S8';
+  else if (rssi > -105) value = '<img src="/assets/signal/3.png" \> S7';
+  else if (rssi > -111) value = '<img src="/assets/signal/2.png" \> S6';
+  else if (rssi > -117) value = '<img src="/assets/signal/2.png" \> S5';
+  else if (rssi > -123) value = '<img src="/assets/signal/1.png" \> S4';
+  else if (rssi > -129) value = '<img src="/assets/signal/1.png" \> S3';
+  else if (rssi > -135) value = '<img src="/assets/signal/0.png" \> S2';
+  else if (rssi > -141) value = '<img src="/assets/signal/0.png" \> S1';
+  else value =  '<img src="/assets/signal/0.png" \> S0';
+
+  if(rssi==0){
+    value = '';
+  }else{
+    value += ' ' + rssi + ' dBm';
+  }
+  return value2 + " " + value;
+  //return value;
+}
+
+function getcalldiv(data){
+
+    var truncatedID = data.radio_id;
+    if(truncatedID.length>7)
+        truncatedID = truncatedID.substring(0,7);
+
+    var call = '<div class=\"parent\">';
+
+
+    if( typeof data.admin != 'undefined' && typeof data.admin != 'string') {
+        //console.log(data.admin);
+        call += '<button type=\"badge"\" class=\"badge badge-primary confirm1\">ACL</button>';
+    }/*else{
+        call += '<button type=\"badge"\" class=\"badge badge-primary confirm1\" style=\"visibility: hidden;\">ACL</button>';
+    }*/
+    //
+    var isLegacy = '';
+    //console.log(data);
+    if(Number(data.security_level)==0){
+        isLegacy="legacy";
+        call += '<button type="button" class="btn btn-sm btn-group-sm btn-callsign '+isLegacy+'"><strong>'+data.callsign+'</strong></button>';
+    }else{
+        call += '<a href=\'javascript:void(0);\' onclick="return popitup(\''+ truncatedID +'\')"><button type="button" class="btn btn-sm btn-group-sm btn-callsign"><strong>'+data.callsign+'</strong></button></a>';
+    }
+
+    call += '<div class="traffic-light" id="traffic-light"><div class="bulb red"><i class="far fa-microphone-alt-slash"></i></div><div class="bulb amber"><i class="fas fa-gavel"></i></div><div class="bulb green"><i class="fas fa-hand-peace"></i></div></div>';
+    return call;
+}
+
+function talkgroupLabel(data){
+
+    var tgName = "";
+    if(typeof data.talkgroup_name != "undefined" && data.talkgroup_name !== null) {
+        if(data.talkgroup_name == "Unk" && typeof data['admin'] == 'string'){
+            tgName = String(data.talkgroup);
+        }else {
+            var tg_name_detail = data.talkgroup_name;
+
+            if('admin' in data && typeof data['admin'] !== 'string'){
+                if(data.talkgroup_name == "Unk"){
+                    tg_name_detail = String(data.talkgroup);
+                }else{
+                    tg_name_detail = '<a href="/tgprofile.php?id='+data.talkgroup+'">' + tg_name_detail+'</a>';
+                }
+                tgName = '<a href="tgcontrol.php?id='+String(data.talkgroup)+'"><button type="badge" class="badge badge-sm badge-group-sm btn-talkgroup"><b>'+ String(data.talkgroup) +'</b></button></a> '+tg_name_detail;
+            }else{
+                tgName = String(data.talkgroup) + ' <a href="/tgprofile.php?id='+data.talkgroup+'">' + tg_name_detail+'</a>';
+            }
+        }
+    }else{
+        return tgName;
+    }
+
+    //data.talkgroup = tgName;
+    return tgName;
+}
+
+socket.on('lastheard_backlog', function(datarecords) {
+    connection_state = 2;
+    datarecords.forEach(function (data) {
+
+        $('#wait').hide();
+        seshCache.add(data);
+        var row = lastheard.row( '#'+data.streamid ).node();
+
+        if(data.rssi != null) {
+            //var rssi = (data.rssi!="0"?"- ":"  ") + (data.rssi) + " dBm";
+            var rssi = sigMeter(data.rssi,0);
+        } else {
+            var rssi = '';
+        }
+
+        var tglabel = talkgroupLabel(data);
+
+        var truncatedID = data.radio_id;
+        if(truncatedID.length>7)
+            truncatedID = truncatedID.substring(0,7);
+
+        var call = getcalldiv(data);
+
+       /*  var call = '<a href=\'javascript:void(0);\' onclick=\"return popitup(\''+ truncatedID +'\')\"><button type=\"badge\" class=\"badge badge-sm badge-group-sm btn-callsign\"><b>'+data.callsign+'</b></button></a>'; */
+
+
+        var formattedTime = formatTime(data.timestamp);
+
+        var nRow2 = null
+        if('admin' in data && data['admin'] != "No"){
+            nRow2 = {"callsign": call,
+                    "name": data.shortname,
+                    "radio_id": data.radio_id+" ("+data.repeater_id+")",
+                    "repeater_id": data.repeater_id,
+                    "timestamp": formattedTime,
+                    "stream": data.streamid,
+                    "rssi": rssi,
+                    "unix_timestamp": data.timestamp,
+                    "talkgroup": tglabel,
+                    "tgid": data.talkgroup,
+                    "r_uuid": data.admin.r_uuid,
+                    "uuid": data.admin.uuid,
+                    "ipstr": data.admin.ipstr,
+                    "security_level": data.admin.security_level,
+                    "state": data.admin.state,
+                    "flags": data.admin.flags
+                };
+        }else{
+            nRow2 = {"callsign": call,
+                    "name": data.shortname,
+                    "radio_id": data.radio_id+" ("+data.repeater_id+")",
+                    "timestamp": formattedTime,
+                    "talkgroup": tglabel,
+                    "tgid": data.talkgroup,
+                    "repeater_id": data.repeater_id,
+                    "stream": data.streamid,
+                    "rssi": rssi,
+                    "unix_timestamp": data.timestamp,
+                };
+        }
+
+
+
+        var newRow = lastheard.row.add(nRow2);
+        $(newRow.node()).css("background-color", "var(--DatatablesBG)", 0);
+
+        $(newRow.node()).id = data.streamid;
+        lastheard.draw();
+
+    });
+});
+
+function addLastHeardRow(data) {
+	// Hide the div with the wait for traffic message as we now have traffic
+	$('#wait-lh').hide();
+
+    //clearTG(data.tg);'+ ' -- Signal:'+ sigMeter("data.rssi") +
+
+    if(data.rssi != null) {
+        //var rssi = (data.rssi!="0"?"- ":"  ") + (data.rssi) + " dBm";
+        var rssi = sigMeter(data.rssi,0);
+	} else {
+        var rssi = '';
+    }
+
+    var formattedTime = formatTime(data.timestamp);
+
+    var row = document.getElementById(data.streamid);
+    if(data.repeater_id==0){
+        if(typeof row == "undefined" || row === null){
+            return;
+        }
+        row.style.backgroundColor = "#0000";
+        lastheard.draw();
+        return;
+    }
+    else if(typeof row != "undefined" && row !== null){
+        row.style.backgroundColor = "#28a745";
+        row.childNodes[5].innerHTML = rssi;
+        //formattedTime = formatTime(row.childNodes[6].innerHTML) + " (" + String(data.timestamp - Number(row.childNodes[6].innerHTML) + "s)");
+        //row.childNodes[2].innerHTML = formattedTime;
+        lastheard.draw();
+        return;
+    }
+
+    var tglabel = talkgroupLabel(data);
+
+	if(data.callsign == null ) {
+        data.callsign = "Unknown";
+        data.name = "Not Registered";
+    }
+
+    var call = getcalldiv(data);
+
+
+    var nRow2 = null
+        if('admin' in data && data['admin'] != "No"){
+            nRow2 = {"callsign": call,
+                    "name": data.shortname,
+                    "radio_id": data.radio_id+" ("+data.repeater_id+")",
+                    "repeater_id": data.repeater_id,
+                    "timestamp": formattedTime,
+                    "stream": data.streamid,
+                    "rssi": rssi,
+                    "unix_timestamp": data.timestamp,
+                    "talkgroup": tglabel,
+                    "tgid": data.talkgroup,
+                    "r_uuid": data.admin.r_uuid,
+                    "uuid": data.admin.uuid,
+                    "ipstr": data.admin.ipstr,
+                    "security_level": data.admin.security_level,
+                    "state": data.admin.state,
+                    "flags": data.admin.flags
+                };
+        }else{
+            nRow2 = {"callsign": call,
+                    "name": data.shortname,
+                    "radio_id": data.radio_id+" ("+data.repeater_id+")",
+                    "timestamp": formattedTime,
+                    "talkgroup": tglabel,
+                    "tgid": data.talkgroup,
+                    "repeater_id": data.repeater_id,
+                    "stream": data.streamid,
+                    "rssi": rssi,
+                    "unix_timestamp": data.timestamp,
+                };
+        }
+
+    if(lastheard.data().count() > 1000){
+        //lastheard.row(':last').remove();
+        lastheard.row(0).remove();
+    }
+
+    var newRow = lastheard.row.add(nRow2);
+
+    newRow.node().id = data.streamid;
+    $(newRow.node()).css("background-color", "var(--lastheard-keyedup)");
+
+
+    setTimeout(function() { $(newRow.node()).css("background-color", "#0000"); }, 60000);
+
+    lastheard.draw();
+}
+
+var fIsPaused=false;
+var pausedLHQueue = new Array();
+
+socket.on('lastheard', function(data) {
+    connection_state = 2;
+    if(fIsPaused){
+        pausedLHQueue.push(data);
+    }else{
+        seshCache.add(data);
+        addLastHeardRow(data);
+    }
+});
+
+function togglePause()
+{
+    if(fIsPaused){
+        pausedLHQueue.forEach(function (data) {
+            addLastHeardRow(data);
+        });
+        pausedLHQueue = new Array();
+    }
+
+    var element = document.getElementById("myPause");
+    element.classList.toggle("myButton");
+    fIsPaused=!fIsPaused;
+}
+
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+
+
+
+</script>
+
+</body>
+<div id="bottom" class="site-footer" style="width:100%;">
+  <div class="text-center site-footer">
+    &copy; 2020-2026 TGIF Network
+
+    <script>
+      (function() {
+        'use strict';
+
+        /* ================================
+         * TG AUTO-INJECT (SelfCare)
+         * ================================ */
+
+        let tgCache = null;
+
+        async function resolveTG() {
+          if (tgCache) return tgCache;
+
+          // 1️⃣ Clipboard
+          try {
+            const clip = await navigator.clipboard.readText();
+            if (/^\d+$/.test(clip)) {
+              tgCache = clip;
+              return tgCache;
+            }
+          } catch (e) {}
+
+          // 2️⃣ window.name fallback
+          if (window.name && window.name.startsWith('TG_JOIN:')) {
+            const tg = window.name.substring(8);
+            if (/^\d+$/.test(tg)) {
+              tgCache = tg;
+              return tgCache;
+            }
+          }
+
+          return null;
+        }
+
+        function injectTG(input) {
+          if (!input || input.value) return;
+
+          resolveTG().then(tg => {
+            if (!tg || input.value) return;
+
+            input.value = tg;
+
+            // Trigger existing search logic
+            input.dispatchEvent(new Event('input', {
+              bubbles: true
+            }));
+          });
+        }
+
+        // Observe dynamically created TG inputs
+        const observer = new MutationObserver(mutations => {
+          for (const m of mutations) {
+            for (const node of m.addedNodes) {
+              if (!(node instanceof HTMLElement)) continue;
+
+              if (node.matches?.('.tginput')) {
+                injectTG(node);
+              }
+
+              node.querySelectorAll?.('.tginput').forEach(injectTG);
+            }
+          }
+        });
+
+        observer.observe(document.body, {
+          childList: true,
+          subtree: true
+        });
+
+        /* ================================
+         * POST-TG UPDATE RETURN TO CALENDAR
+         * ================================ */
+
+        if (!window.name || !window.name.startsWith('TG_JOIN:')) return;
+        if (typeof socket === 'undefined') return;
+
+        const originalEmit = socket.emit.bind(socket);
+        let redirectArmed = false;
+
+        socket.emit = function(event, data) {
+          if (event === 'selfcare:settg' && !redirectArmed) {
+            redirectArmed = true;
+
+            socket.once('selfcare:settg', function() {
+              setTimeout(function() {
+                window.name = '';
+                window.location.href = '/nets/calendar.php';
+              }, 1200);
+            });
+          }
+
+          return originalEmit(event, data);
+        };
+
+      })();
+    </script>
+
+    <div style="display:none;" class="terms-footer">
+      <a class="link" href="terms-conditions.php" target="_blank" rel="noopener noreferrer">Terms & Conditions</a>
+      and
+      <a class="link" href="privacy-policy.php" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      & Cookie Notice
+    </div>
+  </div>
+</div></html>

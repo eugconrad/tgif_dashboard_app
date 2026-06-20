@@ -1,0 +1,912 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TGIF Network</title>
+    <meta name="description" content="TGIF Network">
+    <meta name="keywords" content="TGIF, TGIF Network, DMR, hotspot, mmdvm, lastheard, lastheard, pistar, pi-star, brandmeister" />
+
+    <!-- CSS - Javascripts for nav bar and main pages-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <noscript>Sorry, TGIF Network requires JavaScript to be enabled.</noscript>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/css/datatables.min.css" />
+    <script type="text/javascript" src="/assets/js/datatables.min.js"></script>
+    <!-- Start of scrollin text -->
+    <!--   <marquee behavior="scroll" direction="left" scrollamount="8"><h3><b><font color=green><i class="fa fa-bell"></i> Hello TGIF Members</b></font> - <strong>TGIF Server Funding Time is here again please donate</strong></h3></marquee> -->
+    <!-- End of scrollin text -->
+    <!-- Start of Navbar -->
+
+
+    <nav role="navigation" class="navbar navbar-dark navbar-expand-sm sticky-top bg-dark text-monospace text-capitalize text-left">
+        <div class="container-fluid tgifnav">
+            <button id="move-right" data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span></button>
+            <a class="navbar-brand" href="/index.php">TGIF Network
+            </a>
+
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+
+
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" aria-label=" Monitoring"> Monitoring</a>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" role="presentation" href="/lastheard.php" >Last Heard</a>
+                            <a class="dropdown-item" role="presentation" href="/activetg.php" >Active Talkgroups</a>
+                            <a class="dropdown-item" role="presentation" href="/talkgroups.php" >Talkgroup List</a>
+                            <a class="dropdown-item" role="presentation" href="/talkgroup_stats.php" >Talkgroup 30 day Stats</a>
+                            <a class="dropdown-item" role="presentation" href="/status.php" >Server Status</a>
+                            <a class="dropdown-item" role="presentation" href="/Lh-Map.php" >Last Heard Beta Map</a>
+
+
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"
+                            href="/nets/calendar.php"
+                            data-toggle="dropdown"
+                            aria-expanded="false">
+
+                            <i class="fas fa-calendar-alt"></i>
+                            TGIF Nets
+
+                            
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" style="min-width:300px;">
+
+                            <!-- Timezone display -->
+                            <div class="dropdown-header small">
+                                <i class="fas fa-globe"></i>
+                                Timezone
+                                (<span id="userTz"></span>)
+                            </div>
+
+                            
+                                    <!-- ================= NO NETS ================= -->
+                                    <div class="px-3 py-2 text-muted text-center">
+                                        No nets starting in the next 90 minutes
+                                    </div>
+
+                                    <div class="dropdown-divider"></div>
+
+                                
+                                <!-- ================= CALENDAR LINK ================= -->
+                                <a class="dropdown-item text-center" href="/nets/calendar.php">
+                                    View Full Calendar →
+                                </a>
+
+                                </div>
+                    </li>
+
+
+
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" aria-label=" help">Help</a>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" role="presentation" aria-label="" href="/help.php">TGIF Setup</a>
+                            <a class="dropdown-item" role="presentation" href="/faq.php" >FAQ</a>
+                            <a class="dropdown-item" role="presentation" href="https://tgifnetwork.createaforum.com/index.php" target="_blank">Forum</a>
+                            <a class="dropdown-item" role="presentation" href="/helpvid.php" target="_blank">Video Knowledge Base</a>
+                            <a class="dropdown-item" role="presentation" href="/disclaimer.php">Disclaimer</a>
+                            <a class="dropdown-item" role="presentation" href="/privacy-policy.php">Privacy-Policy</a>
+                            <a class="dropdown-item" role="presentation" href="/terms-conditions.php">Terms-Conditions</a>
+
+                        </div>
+                    </li>
+
+                                        <!--<li class="nav-item" role="presentation"><a href="support@tgif.network" class="nav-link active">Contact Us</a></li>-->
+
+
+                </ul>
+
+
+            </div>
+            <div class="move-right nav-item dropdown">
+                <a class="dropdown-toggle nav-link move-left" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-portrait size"></i>
+                    Registration</a><div class="dropdown-menu" role="menu"><a class="dropdown-item " role="presentation" href="/signin.php">Sign In</a><a class="dropdown-item" role="presentation" href="/signin.php#signup">Register</a></div>
+
+                    <!-- </li> -->
+            </div>
+        </div>
+    </nav>
+    <script type="text/javascript" src="/assets/js/togglermenu.js"></script>
+    <!-- End Navbar -->
+    <link rel="stylesheet" href="/assets/css/themes/default.css" />
+    <link rel="stylesheet" href="/assets/css/themes/globals.css" />
+    <link rel="stylesheet" href="/assets/css/header2.css" />
+
+    <script>
+        /* =========================================================
+         * TGIF COUNTDOWN CORE (HEADER + CALENDAR SHARED)
+         * PHP 7.3 SAFE – NO NEW FILES
+         * ======================================================= */
+        (function(window, document) {
+            'use strict';
+
+            if (window.__TGIF_HEADER_UI__) return;
+            window.__TGIF_HEADER_UI__ = true;
+
+            /* -----------------------------------------------------
+             * Shared countdown formatter
+             * --------------------------------------------------- */
+            var TGIFCountdown = {
+                format: function(seconds) {
+                    if (seconds <= 0) return 'ENDED';
+
+                    // Round UP to the next minute (matches calendar)
+                    var totalMin = Math.ceil(seconds / 60);
+
+                    var h = Math.floor(totalMin / 60);
+                    var m = totalMin % 60;
+
+                    if (h > 0) {
+                        return h + 'h ' + m + 'm remaining';
+                    }
+
+                    return totalMin + 'm remaining';
+                }
+            };
+
+            window.TGIFCountdown = TGIFCountdown;
+
+            /* -----------------------------------------------------
+             * Tooltip init (defensive)
+             * --------------------------------------------------- */
+            function initTooltips() {
+                if (!window.jQuery) return;
+                if (!jQuery.fn || typeof jQuery.fn.tooltip !== 'function') return;
+                jQuery('[data-toggle="tooltip"]').tooltip();
+            }
+
+            /* -----------------------------------------------------
+             * Timezone display
+             * --------------------------------------------------- */
+            function setUserTimezone() {
+                try {
+                    if (!window.Intl) return;
+                    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                    var el = document.getElementById('userTz');
+                    if (el && tz) el.textContent = tz;
+                } catch (e) {}
+            }
+
+            /* -----------------------------------------------------
+             * LIVE net updater (header)
+             * --------------------------------------------------- */
+            function updateLiveCountdowns() {
+                if (!window.jQuery) return;
+
+                var now = Math.floor(Date.now() / 1000);
+                var liveCount = 0;
+
+                jQuery('.live-net').each(function() {
+                    var end = parseInt(this.dataset.endTs, 10);
+                    if (!end) return;
+
+                    var remaining = end - now;
+                    var label = jQuery(this).find('.live-countdown');
+
+                    if (remaining <= 0) {
+                        jQuery(this).remove(); // 🔥 auto-remove ended nets
+                        return;
+                    }
+
+                    label
+                        .text(TGIFCountdown.format(remaining))
+                        .removeClass('text-muted')
+                        .addClass('text-danger');
+
+                    liveCount++;
+                });
+
+                // If no live nets left → remove LIVE badge
+                if (liveCount === 0) {
+                    jQuery('.navbar .badge-danger').remove();
+                    jQuery('#live-nets-section').remove(); // ✅ single source of truth
+                }
+
+            }
+
+            /* -----------------------------------------------------
+             * DOM ready helper
+             * --------------------------------------------------- */
+            function onReady(fn) {
+                if (document.readyState === 'complete' ||
+                    document.readyState === 'interactive') {
+                    setTimeout(fn, 0);
+                } else {
+                    document.addEventListener('DOMContentLoaded', fn);
+                }
+            }
+
+            /* -----------------------------------------------------
+             * Init
+             * --------------------------------------------------- */
+            onReady(function() {
+                initTooltips();
+                setUserTimezone();
+                updateLiveCountdowns();
+
+                // Faster updates near end, still cheap
+                setInterval(updateLiveCountdowns, 1000);
+            });
+
+        })(window, document);
+    </script><!-- style all in TGIF Gobal -->
+ <link rel="stylesheet" href="/assets/css/spinner.css">
+<script src="/assets/js/spinner.js"></script>
+<script type='text/javascript' src="/lib/securimage/securimage.js"></script>
+
+<style>
+    .loginCon {
+        margin: 1% auto;
+        width: 98%;
+        border-radius: 12.2px;
+        box-shadow: var(--box-shadow);
+        position: center;
+        padding: 15px 15px 15px 15px;
+    }
+
+    .loginForm {
+        margin: 1% auto;
+        padding: 15px 15px 15px 15px;
+        width: 45%;
+        background-color: rgb(212, 209, 209);
+        border-radius: 25px;
+        box-shadow: var(--box-shadow);
+        opacity: 0.9;
+        z-index: auto;
+
+    }
+
+    .loginContainer {
+     /*    padding: 5px; */
+        width: 98%;
+      /*   margin: 8px; */
+        opacity: 0.8;
+        z-index: auto;
+    }
+
+   .signupContainer {
+        width: 98%;
+        margin: 8px;
+        opacity: 0.8;
+        display: none;
+    }
+    #captcha_code1{
+        margin: 40px 0px 0px 0px;
+    }
+
+
+</style>
+
+</head>
+
+<script>
+    function addSpinner(el, static_pos) {
+        var spinner = el.children('.spinner');
+        if (spinner.length && !spinner.hasClass('spinner-remove')) return null;
+        !spinner.length && (spinner = $('<div class="spinner' + (static_pos ? '' : ' spinner-absolute') + '"/>')
+            .appendTo(el));
+        animateSpinner(spinner, 'add');
+    }
+
+    function removeSpinner(el, complete) {
+        var spinner = el.children('.spinner');
+        spinner.length && animateSpinner(spinner, 'remove', complete);
+    }
+
+    function animateSpinner(el, animation, complete) {
+        if (el.data('animating')) {
+            el.removeClass(el.data('animating')).data('animating', null);
+            el.data('animationTimeout') && clearTimeout(el.data('animationTimeout'));
+        }
+        el.addClass('spinner-' + animation).data('animating', 'spinner-' + animation);
+        el.data('animationTimeout', setTimeout(function () {
+            animation == 'remove' && el.remove();
+            complete && complete();
+        }, parseFloat(el.css('animation-duration')) * 1000));
+    }
+</script>
+
+<body>
+<!-- <div class="MainWrapper"> -->
+<div class="MainWrapper" id="wrapper1">
+<div class="container">
+<!-- Create a First Div for Login Form -->
+    <div class="loginContainer" id="loginContainer">
+        <div class="tgif-grid">
+            <div>
+                <h2>Account Login</h2>
+            </div>
+
+            <form id="loginForm" method="post">
+                <div>
+                    <h6>Don't have an account?</h6> <a href='#' class="btn btn-success" id='signup'>
+                        <i class="fas fa-user-edit"></i> Register</a>
+                </div>
+                <h4><div class="display-error" style="display: none;"></div></h4>
+                <h4><div class="success_message" style="display: none;"></div></h4>
+                <div class="tgif-grid-cell tgif-grid-cell--mb-2x w-third--d w-half--t w-full--m">
+                    <div class="floating-label-wrap">
+                        <input type="text" autofocus autocomplete="username" class="floating-label-field floating-label-field--s2" id="Callsign" name="lcallsign" placeholder="Callsign">
+                        <label for="Callsign" class="floating-label">Callsign</label>
+                    </div>
+                </div>
+
+                <div class="tgif-grid-cell tgif-grid-cell--mb-2x w-third--d w-half--t w-full--m">
+                    <div class="floating-label-wrap">
+                        <input type="password" autocomplete="current-password" class="floating-label-field floating-label-field--s2" id="myInput" name="lpassword" placeholder="Password">
+                        <label for="myInput" class="floating-label">Password</label>
+                    </div>
+                </div>
+
+                <div class="custom-control custom-switch"><input class="custom-control-input" onclick="myFunction1()" type="checkbox" id="formCheck-1" /><label
+                     class="custom-control-label" for="formCheck-1"><strong>Show Password</strong></label>
+                </div>
+                <a href="forgotpassword.php" class="fas fa-user-lock"></i><strong> Forgot Password</strong></a><br><br>
+
+                <div id="captcha1_div"></div><br>
+               <!--  <div style="display: none;" class="terms"><input onclick="functionhere" type="checkbox" id="formCheck-5" /><label
+                     class="label" for="formCheck-5"><strong> I have read and agree to the <a class="link" href="terms-conditions.php" rel="noopener noreferrer" target="_blank">
+                        Terms & Conditions </a> and <a class="link" href="privacy-policy.php" rel="noopener noreferrer" target="_blank">
+                        Privacy Policy</a> & Cookie Notice </strong></label>
+                </div> -->
+                <button type="submit" class="btn btn-success" id="signin_submit"><i class="fas fa-sign-in-alt icon-large"></i> Login</button>
+            </form>
+        </div>
+    </div>
+    <!--End First Div--->
+
+    <!--Open Second Div -->
+    <div class="signupContainer" id="signupContainer">
+        <div class="tgif-grid">
+            <div>
+                <h2>Account Registration</h2>
+            </div>
+            <div id="registration_btn">
+                <p>
+                <h6>Already have an account?</h6> <a href="#" class="btn btn-success" id="signin">
+                    <i class="fas fa-sign-in-alt icon-large"></i> Login</a>
+            </div>
+            <form id="registFrm" method="post">
+                <h4>
+                    <div class="display-error" style="display: none;"></div>
+                </h4>
+                <h4><div class="success_message" style="display: none;"></div></h4>
+
+                <div class="tgif-grid-cell tgif-grid-cell--mb-2x w-third--d w-half--t w-full--m">
+                    <div class="floating-label-wrap">
+                         <input type="text" autocomplete="username" onblur="myFunction2()" class="floating-label-field floating-label-field--s2" id="Callsign-1" name="rcallsign" placeholder="Callsign" required autofocus>
+                         <label for="Callsign-1" class="floating-label">Must be a licensed callsign</label>
+                    </div>
+                </div>
+
+                <div class="tgif-grid-cell tgif-grid-cell--mb-2x w-third--d w-half--t w-full--m">
+                    <div class="floating-label-wrap">
+                         <input type="text" class="floating-label-field floating-label-field--s2" id="First-Name" name="rfirstname" placeholder="First Name" required>
+                         <label for="First-Name" class="floating-label">First Name</label>
+                    </div>
+                </div>
+
+                <div class="tgif-grid-cell tgif-grid-cell--mb-2x w-third--d w-half--t w-full--m">
+                    <div class="floating-label-wrap">
+                         <input type="text" class="floating-label-field floating-label-field--s2" id="Surname" name="rlastname" placeholder="Your Lastname / Surname" required>
+                         <label for="Surname" class="floating-label">Last Name / Surname</label>
+                    </div>
+                </div>
+
+                <div class="tgif-grid-cell tgif-grid-cell--mb-2x w-third--d w-half--t w-full--m">
+                    <div class="floating-label-wrap">
+                         <input type="text" class="floating-label-field floating-label-field--s2" id="Preferred" name="rshortname" placeholder="Preferred Name" required>
+                         <label for="Preferred" class="floating-label">Preferred Name (Displayed Name)</label>
+                    </div>
+                </div>
+
+                <div class="tgif-grid-cell tgif-grid-cell--mb-2x w-third--d w-half--t w-full--m">
+                    <div class="floating-label-wrap">
+                         <input type="email" autocomplete="email" class="floating-label-field floating-label-field--s2" id="email1" onclick="myFunction3()" name="remail" placeholder="Enter Valid Email" required>
+                         <label for="email1" class="floating-label">E-mail</label>
+                    </div>
+                </div>
+
+                <div id="email-error" class="display-email-error" style="display: none;"></div>
+
+                <div class="tgif-grid-cell tgif-grid-cell--mb-2x w-third--d w-half--t w-full--m">
+                    <div class="floating-label-wrap">
+                        <input type="email" autocomplete="email" class="floating-label-field floating-label-field--s2" id="email2" onclick="myFunction3()" onblur="VerifyDataIsIdentical('email1','email2')" name="email2" placeholder="Confirm E-mail" required>
+                        <label for="email2" class="floating-label">Confirm E-mail</label>
+                    </div>
+                </div>
+
+                <div class="tgif-grid-cell tgif-grid-cell--mb-2x w-third--d w-half--t w-full--m">
+                    <div class="floating-label-wrap">
+                         <input type="password" autocomplete="new-password" class="floating-label-field floating-label-field--s2" id="psw" onclick="myFunction4()" name="rpassword" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                        <label for="psw" class="floating-label">Password</label>
+                        <div class="message" id="message">
+                            <h5>Your password must contain the following:</h5>
+                            <p id="letter" class="invalid">1 <b>lowercase</b> letter</p>
+                            <p id="capital" class="invalid">1 <b>capital (uppercase)</b> letter</p>
+                            <p id="number" class="invalid">1 <b>number</b></p>
+                            <p id="length" class="invalid">Contain at least <b>8 characters</b></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="password-error" class="display-password-error" style="display: none;"></div>
+
+                <div class="tgif-grid-cell tgif-grid-cell--mb-2x w-third--d w-half--t w-full--m">
+                    <div class="floating-label-wrap">
+                         <input type="password" autocomplete="confirm_password" class="floating-label-field floating-label-field--s2" id="confirm_password" onclick="myFunction4()" onblur="VerifyDataIsIdentical1('psw','confirm_password')" name="confirm_password" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                         <label for="confirm_password" class="floating-label">Confirm Password</label>
+                    </div>
+                </div>
+
+                <div class="tgif-grid-cell tgif-grid-cell--mb-2x w-third--d w-half--t w-full--m">
+                    <div class="floating-label-wrap">
+                         <input type="text" class="floating-label-field floating-label-field--s2" id="City" name="rcity" placeholder="City" required>
+                        <label for="City" class="floating-label">City</label>
+                    </div>
+                </div>
+
+                <div class="tgif-grid-cell tgif-grid-cell--mb-2x w-third--d w-half--t w-full--m">
+                    <div class="floating-label-wrap">
+                         <input type="text" class="floating-label-field floating-label-field--s2" id="State" name="rstate" placeholder="State/ County/ Province" required>
+                        <label for="State" class="floating-label">State/ County/ Province</label>
+                    </div>
+                </div>
+
+                <div class="tgif-grid-cell tgif-grid-cell--mb-2x w-third--d w-half--t w-full--m">
+                    <div class="floating-label-wrap">
+                         <input type="text" class="floating-label-field floating-label-field--s2" id="pickcountry" name="rcountry" placeholder="Country" required>
+                        <label for="pickcountry" class="floating-label">Country</label>
+                    </div>
+                </div>
+                <br>
+                <div id='captcha2_div'></div><br>
+                <div style="display: none;" class="terms"><input onclick="functionhere" type="checkbox" id="terms-6" /><label
+                     class="label" for="terms-6"><strong> I have read and agree to the <a class="link" href="terms-conditions.php" rel="noopener noreferrer" target="_blank">
+                        Terms & Conditions </a> and <a class="link" href="privacy-policy.php" rel="noopener noreferrer" target="_blank">
+                        Privacy Policy</a> & Cookie Notice </strong></label>
+                </div>
+                <button type="submit" class="btn btn-success" id="register_submit"><i class="fas fa-user-edit"></i>Register</button>
+            </form>
+        </div>
+        <!--End second div--->
+    </div>
+ </div>
+</div>
+
+ </body>
+
+     <script src="/assets/js/psw.js"></script>
+
+
+
+<!-- start of email and password  verification  -->
+<script>
+
+        var next_location = "/status.php";var failed_attempts = 0;
+		var d1pastval = new String();
+		var d2pastval = new String();
+		function VerifyDataIsIdentical(email1,email2) {
+		var d1val = document.getElementById(email1).value;
+		var d2val = document.getElementById(email2).value;
+
+		if(d1val.length &&
+		   d2val.length &&
+		   (d1val != d2val) &&
+		   ( (d1val != d1pastval) || (d2val != d2pastval) )) {
+			  $(".display-email-error").html("<ul> <li role='alert'>Email Address must be Identical</li></ul>");
+			  $(".display-email-error").css("display", "block");
+			  d1pastval = d1val;
+			  d2pastval = d2val;
+			  return false;
+		   }
+		return true;
+		}
+
+		function myFunction3() {
+		  document.getElementById("email-error").style.display = "none";
+		}
+
+		</script>
+
+	 <script>
+		var d3pastval = new String();
+		var d4pastval = new String();
+		function VerifyDataIsIdentical1(psw,confirm_password) {
+		var d3val = document.getElementById(psw).value;
+		var d4val = document.getElementById(confirm_password).value;
+
+		if(d3val.length &&
+		   d4val.length &&
+		   (d3val != d4val) &&
+		   ( (d3val != d3pastval) || (d4val != d4pastval) )) {
+			  $(".display-password-error").html("<p role='alert'>Password must be Identical</p>");
+			  $(".display-password-error").css("display", "block");
+			  d3pastval = d3val;
+			  d4pastval = d4val;
+			  return false;
+		   }
+		return true;
+		}
+
+		function myFunction4() {
+		  document.getElementById("password-error").style.display = "none";
+		}
+
+		</script>
+
+<!-- end of email and password  verification  -->
+
+    <script>
+        function getCaptcha(num, elem) {
+            if(failed_attempts || elem == "captcha2_div"){
+                $.post("signin.php", {
+                        captcha: num
+                    },
+                    function (data, status) {
+                        var scriptNode = document.createElement('script');
+                        scriptNode.innerHTML = "captcha" + num +
+                            "_audioObj = new SecurimageAudio({ audioElement: 'captcha" + num +
+                            "_audio', controlsElement: 'captcha" + num + "_audio_controls' });";
+                        document.getElementById(elem).innerHTML = data;
+                        document.getElementById(elem).appendChild(scriptNode);
+                    }
+                );
+            }else{
+                document.getElementById(elem).innerHTML = "";
+            }
+        }
+
+
+        $(document).ready(function () {
+            //On click signup it will hide login form & display registration form
+            $("#signup").click(function () {
+                $("#loginContainer.display-error").html("");
+                $("#loginContainer.display-error").css("");
+                $("#loginContainer").slideUp("slow", function () {
+                    getCaptcha("2", "captcha2_div");
+                    $("#signupContainer").slideDown("slow");
+
+                });
+            });
+            //On click signin it will hide Registration form & display Login form
+
+            $("#signin").click(function () {
+                $("#signupContainer.display-error").html("");
+                $("#signupContainer.display-error").css("");
+                $("#signupContainer").slideUp("slow", function () {
+                    getCaptcha("1", "captcha1_div");
+                    $("#loginContainer").slideDown("slow");
+                });
+            });
+
+            var winhash = window.location.hash;
+            if(window.location.hash.length>1){
+                if(winhash == "#signup"){
+                    $('#signup').click();
+                }else{
+                    getCaptcha("1", "captcha1_div");
+                }
+            }
+        });
+
+        function myFunction1() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+        function myFunction2() {
+		  var x = document.getElementById("Callsign-1");
+		  x.value = x.value.toUpperCase();
+		}
+
+        function resend_verify(callsign) {
+            var data = "callsign="+callsign+"&action=resend_verify";
+            $.ajax({
+                url: 'signin.php',
+                data: data,
+                type: 'POST',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.code == 200) {
+                        document.getElementById("signin_submit").disabled = false;
+                        $(".success_message").html("<p role='alert'>" + data.msg +
+                            "</p>");
+                        $(".success_message").css("display", "block");
+                        getCaptcha("1", "captcha1_div");
+                        $("html, body").animate({
+                            scrollTop: 0
+                        }, "slow");
+                    } else {
+                        document.getElementById("signin_submit").disabled = false;
+                        $(".success_message").html("<p role='alert'>" + data.msg +
+                            "</p>");
+                        $(".success_message").css("display", "block");
+                        getCaptcha("1", "captcha1_div");
+                        $("html, body").animate({
+                            scrollTop: 0
+                        }, "slow");
+                    }
+                },
+                error: function (jqXHR, exception) {
+                    var msg = '';
+                    if (jqXHR.status === 0) {
+                        msg = 'Not connect.\n Verify Network.';
+                    } else if (jqXHR.status == 404) {
+                        msg = 'Requested page not found. [404]';
+                    } else if (jqXHR.status == 500) {
+                        msg = 'Internal Server Error [500].';
+                    } else if (exception === 'parsererror') {
+                        msg = 'Requested JSON parse failed.';
+                    } else if (exception === 'timeout') {
+                        msg = 'Time out error.';
+                    } else if (exception === 'abort') {
+                        msg = 'Ajax request aborted.';
+                    } else {
+                        msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                    }
+                    alert(msg);
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            $("#loginForm").submit(function () {
+                document.getElementById("signin_submit").disabled = true;
+                var data = $("#loginForm").serialize();
+                checkRecords(data);
+                return false;
+            });
+
+            function checkRecords(data) {
+                $.ajax({
+                    url: 'signin.php',
+                    data: data,
+                    type: 'POST',
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.code == 200) {
+                            //alert('You have successfully login');
+                            window.location = next_location;
+                        } else {
+                            failed_attempts+=1;
+                            document.getElementById("signin_submit").disabled = false;
+                            $(".success_message").html("<p role='alert'>" + data.msg +
+                                "</p>");
+                            $(".success_message").css("display", "block");
+                            getCaptcha("1", "captcha1_div");
+                            $("html, body").animate({
+                                scrollTop: 0
+                            }, "slow");
+                        }
+                    },
+                    error: function (jqXHR, exception) {
+                        var msg = '';
+                        if (jqXHR.status === 0) {
+                            msg = 'Not connect.\n Verify Network.';
+                        } else if (jqXHR.status == 404) {
+                            msg = 'Requested page not found. [404]';
+                        } else if (jqXHR.status == 500) {
+                            msg = 'Internal Server Error [500].';
+                        } else if (exception === 'parsererror') {
+                            msg = 'Requested JSON parse failed.';
+                        } else if (exception === 'timeout') {
+                            msg = 'Time out error.';
+                        } else if (exception === 'abort') {
+                            msg = 'Ajax request aborted.';
+                        } else {
+                            msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                        }
+                        alert(msg);
+                    }
+                });
+            }
+        });
+    </script>
+    <!-- for singup form -->
+    <script>
+        $(document).ready(function () {
+
+
+            $("#registFrm").submit(function () {
+                var data = $("#registFrm").serialize();
+                singupRecords(data);
+                return false;
+            });
+
+            function singupRecords(data) {
+                $.ajax({
+                    url: 'signin.php',
+                    data: data,
+                    type: 'POST',
+                    dataType: 'json',
+                    beforeSend: function () {
+                        $('#register_submit').attr('disabled', true);
+                        $('#signupContainer').attr('style', 'display: block; opacity: 0.3;');
+                        addSpinner($('#wrapper1'));
+                        $("html, body").animate({
+                            scrollTop: 0
+                        }, "slow");
+                    },
+                    complete: function (response) {
+                        $('#register_submit').attr('disabled', false);
+                        $('#signupContainer').attr('style', 'display: block; opacity: 0.9;');
+                        removeSpinner($('#wrapper1'), function () {});
+                    },
+                    success: function (data) {
+                        if (data.code == 200) {
+                            //alert('Registration Successfull! \n Please verify your email to sign in');
+                            setTimeout(function () {
+                                $("#signupContainer.success_message").html("");
+                                $("#signupContainer.success_message").css("");
+                                $("#signupContainer").slideUp("slow", function () {
+                                    $("#loginContainer").slideDown("slow");
+                                    getCaptcha("1", "captcha1_div");
+                                });
+                            }, 5000);
+                            $(".success_message").html("<b role='alert'>" + data.msg +
+                                "</b>");
+                            $(".success_message").css("display", "block");
+                            getCaptcha("2", "captcha2_div");
+                            $("html, body").animate({
+                                scrollTop: 0
+                            }, "slow");
+
+
+                        } else {
+                            failed_attempts+=1;
+                            $(".display-error").html("<p role='alert'>" + data.msg +
+                                "</p>");
+                            $(".display-error").css("display", "block");
+                            getCaptcha("2", "captcha2_div");
+                            $("html, body").animate({
+                                scrollTop: 0
+                            }, "slow");
+                        }
+                    },
+                    error: function (jqXHR, exception) {
+                        console.log(jqXHR);
+                    }
+                });
+            }
+        });
+    </script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+<script src="/assets/js/pickcountry.js"></script>
+
+<div id="bottom" class="site-footer" style="width:100%;">
+  <div class="text-center site-footer">
+    &copy; 2020-2026 TGIF Network
+
+    <script>
+      (function() {
+        'use strict';
+
+        /* ================================
+         * TG AUTO-INJECT (SelfCare)
+         * ================================ */
+
+        let tgCache = null;
+
+        async function resolveTG() {
+          if (tgCache) return tgCache;
+
+          // 1️⃣ Clipboard
+          try {
+            const clip = await navigator.clipboard.readText();
+            if (/^\d+$/.test(clip)) {
+              tgCache = clip;
+              return tgCache;
+            }
+          } catch (e) {}
+
+          // 2️⃣ window.name fallback
+          if (window.name && window.name.startsWith('TG_JOIN:')) {
+            const tg = window.name.substring(8);
+            if (/^\d+$/.test(tg)) {
+              tgCache = tg;
+              return tgCache;
+            }
+          }
+
+          return null;
+        }
+
+        function injectTG(input) {
+          if (!input || input.value) return;
+
+          resolveTG().then(tg => {
+            if (!tg || input.value) return;
+
+            input.value = tg;
+
+            // Trigger existing search logic
+            input.dispatchEvent(new Event('input', {
+              bubbles: true
+            }));
+          });
+        }
+
+        // Observe dynamically created TG inputs
+        const observer = new MutationObserver(mutations => {
+          for (const m of mutations) {
+            for (const node of m.addedNodes) {
+              if (!(node instanceof HTMLElement)) continue;
+
+              if (node.matches?.('.tginput')) {
+                injectTG(node);
+              }
+
+              node.querySelectorAll?.('.tginput').forEach(injectTG);
+            }
+          }
+        });
+
+        observer.observe(document.body, {
+          childList: true,
+          subtree: true
+        });
+
+        /* ================================
+         * POST-TG UPDATE RETURN TO CALENDAR
+         * ================================ */
+
+        if (!window.name || !window.name.startsWith('TG_JOIN:')) return;
+        if (typeof socket === 'undefined') return;
+
+        const originalEmit = socket.emit.bind(socket);
+        let redirectArmed = false;
+
+        socket.emit = function(event, data) {
+          if (event === 'selfcare:settg' && !redirectArmed) {
+            redirectArmed = true;
+
+            socket.once('selfcare:settg', function() {
+              setTimeout(function() {
+                window.name = '';
+                window.location.href = '/nets/calendar.php';
+              }, 1200);
+            });
+          }
+
+          return originalEmit(event, data);
+        };
+
+      })();
+    </script>
+
+    <div style="display:none;" class="terms-footer">
+      <a class="link" href="terms-conditions.php" target="_blank" rel="noopener noreferrer">Terms & Conditions</a>
+      and
+      <a class="link" href="privacy-policy.php" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      & Cookie Notice
+    </div>
+  </div>
+</div></html>

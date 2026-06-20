@@ -1,0 +1,494 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TGIF Network - E20AE Clubstation</title>
+    <meta name="description" content="TGIF Network - E20AE Clubstation">
+    <meta name="keywords" content="TGIF, TGIF Network, DMR, hotspot, mmdvm, lastheard, lastheard, pistar, pi-star, brandmeister" />
+
+    <!-- CSS - Javascripts for nav bar and main pages-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <noscript>Sorry, TGIF Network requires JavaScript to be enabled.</noscript>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/css/datatables.min.css" />
+    <script type="text/javascript" src="/assets/js/datatables.min.js"></script>
+    <!-- Start of scrollin text -->
+    <!--   <marquee behavior="scroll" direction="left" scrollamount="8"><h3><b><font color=green><i class="fa fa-bell"></i> Hello TGIF Members</b></font> - <strong>TGIF Server Funding Time is here again please donate</strong></h3></marquee> -->
+    <!-- End of scrollin text -->
+    <!-- Start of Navbar -->
+
+
+    <nav role="navigation" class="navbar navbar-dark navbar-expand-sm sticky-top bg-dark text-monospace text-capitalize text-left">
+        <div class="container-fluid tgifnav">
+            <button id="move-right" data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span></button>
+            <a class="navbar-brand" href="/index.php">TGIF Network
+            </a>
+
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+
+
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" aria-label=" Monitoring"> Monitoring</a>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" role="presentation" href="/lastheard.php" >Last Heard</a>
+                            <a class="dropdown-item" role="presentation" href="/activetg.php" >Active Talkgroups</a>
+                            <a class="dropdown-item" role="presentation" href="/talkgroups.php" >Talkgroup List</a>
+                            <a class="dropdown-item" role="presentation" href="/talkgroup_stats.php" >Talkgroup 30 day Stats</a>
+                            <a class="dropdown-item" role="presentation" href="/status.php" >Server Status</a>
+                            <a class="dropdown-item" role="presentation" href="/Lh-Map.php" >Last Heard Beta Map</a>
+
+
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"
+                            href="/nets/calendar.php"
+                            data-toggle="dropdown"
+                            aria-expanded="false">
+
+                            <i class="fas fa-calendar-alt"></i>
+                            TGIF Nets
+
+                            
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" style="min-width:300px;">
+
+                            <!-- Timezone display -->
+                            <div class="dropdown-header small">
+                                <i class="fas fa-globe"></i>
+                                Timezone
+                                (<span id="userTz"></span>)
+                            </div>
+
+                            
+                                    <!-- ================= NO NETS ================= -->
+                                    <div class="px-3 py-2 text-muted text-center">
+                                        No nets starting in the next 90 minutes
+                                    </div>
+
+                                    <div class="dropdown-divider"></div>
+
+                                
+                                <!-- ================= CALENDAR LINK ================= -->
+                                <a class="dropdown-item text-center" href="/nets/calendar.php">
+                                    View Full Calendar →
+                                </a>
+
+                                </div>
+                    </li>
+
+
+
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" aria-label=" help">Help</a>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" role="presentation" aria-label="" href="/help.php">TGIF Setup</a>
+                            <a class="dropdown-item" role="presentation" href="/faq.php" >FAQ</a>
+                            <a class="dropdown-item" role="presentation" href="https://tgifnetwork.createaforum.com/index.php" target="_blank">Forum</a>
+                            <a class="dropdown-item" role="presentation" href="/helpvid.php" target="_blank">Video Knowledge Base</a>
+                            <a class="dropdown-item" role="presentation" href="/disclaimer.php">Disclaimer</a>
+                            <a class="dropdown-item" role="presentation" href="/privacy-policy.php">Privacy-Policy</a>
+                            <a class="dropdown-item" role="presentation" href="/terms-conditions.php">Terms-Conditions</a>
+
+                        </div>
+                    </li>
+
+                                        <!--<li class="nav-item" role="presentation"><a href="support@tgif.network" class="nav-link active">Contact Us</a></li>-->
+
+
+                </ul>
+
+
+            </div>
+            <div class="move-right nav-item dropdown">
+                <a class="dropdown-toggle nav-link move-left" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-portrait size"></i>
+                    Registration</a><div class="dropdown-menu" role="menu"><a class="dropdown-item " role="presentation" href="/signin.php">Sign In</a><a class="dropdown-item" role="presentation" href="/signin.php#signup">Register</a></div>
+
+                    <!-- </li> -->
+            </div>
+        </div>
+    </nav>
+    <script type="text/javascript" src="/assets/js/togglermenu.js"></script>
+    <!-- End Navbar -->
+    <link rel="stylesheet" href="/assets/css/themes/default.css" />
+    <link rel="stylesheet" href="/assets/css/themes/globals.css" />
+    <link rel="stylesheet" href="/assets/css/header2.css" />
+
+    <script>
+        /* =========================================================
+         * TGIF COUNTDOWN CORE (HEADER + CALENDAR SHARED)
+         * PHP 7.3 SAFE – NO NEW FILES
+         * ======================================================= */
+        (function(window, document) {
+            'use strict';
+
+            if (window.__TGIF_HEADER_UI__) return;
+            window.__TGIF_HEADER_UI__ = true;
+
+            /* -----------------------------------------------------
+             * Shared countdown formatter
+             * --------------------------------------------------- */
+            var TGIFCountdown = {
+                format: function(seconds) {
+                    if (seconds <= 0) return 'ENDED';
+
+                    // Round UP to the next minute (matches calendar)
+                    var totalMin = Math.ceil(seconds / 60);
+
+                    var h = Math.floor(totalMin / 60);
+                    var m = totalMin % 60;
+
+                    if (h > 0) {
+                        return h + 'h ' + m + 'm remaining';
+                    }
+
+                    return totalMin + 'm remaining';
+                }
+            };
+
+            window.TGIFCountdown = TGIFCountdown;
+
+            /* -----------------------------------------------------
+             * Tooltip init (defensive)
+             * --------------------------------------------------- */
+            function initTooltips() {
+                if (!window.jQuery) return;
+                if (!jQuery.fn || typeof jQuery.fn.tooltip !== 'function') return;
+                jQuery('[data-toggle="tooltip"]').tooltip();
+            }
+
+            /* -----------------------------------------------------
+             * Timezone display
+             * --------------------------------------------------- */
+            function setUserTimezone() {
+                try {
+                    if (!window.Intl) return;
+                    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                    var el = document.getElementById('userTz');
+                    if (el && tz) el.textContent = tz;
+                } catch (e) {}
+            }
+
+            /* -----------------------------------------------------
+             * LIVE net updater (header)
+             * --------------------------------------------------- */
+            function updateLiveCountdowns() {
+                if (!window.jQuery) return;
+
+                var now = Math.floor(Date.now() / 1000);
+                var liveCount = 0;
+
+                jQuery('.live-net').each(function() {
+                    var end = parseInt(this.dataset.endTs, 10);
+                    if (!end) return;
+
+                    var remaining = end - now;
+                    var label = jQuery(this).find('.live-countdown');
+
+                    if (remaining <= 0) {
+                        jQuery(this).remove(); // 🔥 auto-remove ended nets
+                        return;
+                    }
+
+                    label
+                        .text(TGIFCountdown.format(remaining))
+                        .removeClass('text-muted')
+                        .addClass('text-danger');
+
+                    liveCount++;
+                });
+
+                // If no live nets left → remove LIVE badge
+                if (liveCount === 0) {
+                    jQuery('.navbar .badge-danger').remove();
+                    jQuery('#live-nets-section').remove(); // ✅ single source of truth
+                }
+
+            }
+
+            /* -----------------------------------------------------
+             * DOM ready helper
+             * --------------------------------------------------- */
+            function onReady(fn) {
+                if (document.readyState === 'complete' ||
+                    document.readyState === 'interactive') {
+                    setTimeout(fn, 0);
+                } else {
+                    document.addEventListener('DOMContentLoaded', fn);
+                }
+            }
+
+            /* -----------------------------------------------------
+             * Init
+             * --------------------------------------------------- */
+            onReady(function() {
+                initTooltips();
+                setUserTimezone();
+                updateLiveCountdowns();
+
+                // Faster updates near end, still cheap
+                setInterval(updateLiveCountdowns, 1000);
+            });
+
+        })(window, document);
+    </script>
+ <META NAME="googlebot" CONTENT="ugc nofollow">
+ <script type="text/javascript" src="/assets/js/tgrequest_bridge_types.js"></script>
+
+
+<style>
+ a {
+	  text-decoration: none;
+	  color: var(--hyperlink);
+	 /*  text-decoration: underline; */
+	  }
+
+  a:hover {
+	  color: var(--hyperlinkhover);
+	 /*  text-decoration: underline; */
+  }
+
+.border {
+	border: 0px solid rgba(255, 255, 255, 0) !important;
+}
+
+.card-body {
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	min-height: 1px;
+    margin : 10px 0px 0px 0px;
+	padding: 9px;
+    border-radius: 12.2px;
+    box-shadow: var(--box-shadow);
+    background-color:  var(--LhTableBG);
+}
+.card {
+	position: relative;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	min-width: 0;
+	 word-wrap: break-word;
+	background-color: inherit;
+	background-clip: border-box;
+	border: 0px solid rgba(255, 255, 255, 0);
+	border-radius: 0.25rem;
+    margin : 0px 0px 0px 0px;
+}
+.backbutton {
+    padding:10px;
+}
+.img-fluid{
+    border-radius: 5.2px;
+    box-shadow: var(--box-shadow);
+}
+button.btn.btn-donate {
+    color: aliceblue;
+    background-color: brown;
+}
+
+</style>
+
+
+</head>
+
+<body>
+    <script>
+        var country = "197";
+        var language = "en";
+    </script>
+    <div id="wrapper" class="MainWrapper">
+   <button class="btn btn-success" onclick="goBack()"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Go Back</button>
+   <!-- <a href="https://www.paypal.com/donate/?business=F5VL545U9SAVN&no_recurring=0&item_name=TGIF+Network+copher+fund+to+pay+for+our+servers.&currency_code=USD"
+    target="_blank"><button class="btn btn-sm btn-group-sm btn-donate">Donate To TGIF</button></a> -->
+     <div class="container">
+            <h2 class="text-left" style="padding: 5px;"><strong>&nbsp; E20AE Clubstation</strong><br></h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body border rounded ">
+                        <div class="col-md-12">
+
+                <img class="img-fluid" width="400px" height="400px"  id="tgimage" loading="auto"></div><br>
+                            <h4 class="text-monospace card-title">Talkgroup Trustee&nbsp;<br></h4>
+                            <h4 class="card-title">Callsign: HS0ZOE<br></h4>
+                            <h4 class="text-monospace card-title">Contact Details: hs0zoe@yahoo.com<br></h4>
+                        </div>
+
+                        <div class="card-body border rounded ">
+                            <h4 id="tgid" class="text-monospace card-title">Talkgroup ID: 52909<br></h4>
+                        </div>
+
+                        <div class="card-body border rounded ">
+                            <h4 id="lang" class="text-monospace card-title">Language: </h4>
+
+                            <h4 id="country" class="text-monospace card-title">Country: </h4>
+
+                            <h4 class="text-monospace card-title">Website: N/A<br></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body border rounded ">
+                            <h3 class="text-monospace card-title">Talkgroup&nbsp;Description<br></h3>
+                            <p class="text-justify d-block card-text">E20AE The DXer Clubstation</p>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+      </div>
+</body>
+
+<script>
+
+function setTalkgroupImage(){
+    var image = document.getElementById("tgimage");
+    image.src = "";
+    image.src = "";
+}
+
+(function(){
+    setTalkgroupImage();
+
+    var country_elem = $('#country');
+    country_elem.html("Country: "+getCountry(parseInt(country)));
+    var lang = $('#lang');
+    lang.html("Language: "+getLanguage(language).name);
+})()
+
+</script>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+ </body>
+
+
+ <div id="bottom" class="site-footer" style="width:100%;">
+  <div class="text-center site-footer">
+    &copy; 2020-2026 TGIF Network
+
+    <script>
+      (function() {
+        'use strict';
+
+        /* ================================
+         * TG AUTO-INJECT (SelfCare)
+         * ================================ */
+
+        let tgCache = null;
+
+        async function resolveTG() {
+          if (tgCache) return tgCache;
+
+          // 1️⃣ Clipboard
+          try {
+            const clip = await navigator.clipboard.readText();
+            if (/^\d+$/.test(clip)) {
+              tgCache = clip;
+              return tgCache;
+            }
+          } catch (e) {}
+
+          // 2️⃣ window.name fallback
+          if (window.name && window.name.startsWith('TG_JOIN:')) {
+            const tg = window.name.substring(8);
+            if (/^\d+$/.test(tg)) {
+              tgCache = tg;
+              return tgCache;
+            }
+          }
+
+          return null;
+        }
+
+        function injectTG(input) {
+          if (!input || input.value) return;
+
+          resolveTG().then(tg => {
+            if (!tg || input.value) return;
+
+            input.value = tg;
+
+            // Trigger existing search logic
+            input.dispatchEvent(new Event('input', {
+              bubbles: true
+            }));
+          });
+        }
+
+        // Observe dynamically created TG inputs
+        const observer = new MutationObserver(mutations => {
+          for (const m of mutations) {
+            for (const node of m.addedNodes) {
+              if (!(node instanceof HTMLElement)) continue;
+
+              if (node.matches?.('.tginput')) {
+                injectTG(node);
+              }
+
+              node.querySelectorAll?.('.tginput').forEach(injectTG);
+            }
+          }
+        });
+
+        observer.observe(document.body, {
+          childList: true,
+          subtree: true
+        });
+
+        /* ================================
+         * POST-TG UPDATE RETURN TO CALENDAR
+         * ================================ */
+
+        if (!window.name || !window.name.startsWith('TG_JOIN:')) return;
+        if (typeof socket === 'undefined') return;
+
+        const originalEmit = socket.emit.bind(socket);
+        let redirectArmed = false;
+
+        socket.emit = function(event, data) {
+          if (event === 'selfcare:settg' && !redirectArmed) {
+            redirectArmed = true;
+
+            socket.once('selfcare:settg', function() {
+              setTimeout(function() {
+                window.name = '';
+                window.location.href = '/nets/calendar.php';
+              }, 1200);
+            });
+          }
+
+          return originalEmit(event, data);
+        };
+
+      })();
+    </script>
+
+    <div style="display:none;" class="terms-footer">
+      <a class="link" href="terms-conditions.php" target="_blank" rel="noopener noreferrer">Terms & Conditions</a>
+      and
+      <a class="link" href="privacy-policy.php" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      & Cookie Notice
+    </div>
+  </div>
+</div></html>

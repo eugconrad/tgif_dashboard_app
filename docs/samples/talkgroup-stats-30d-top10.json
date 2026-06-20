@@ -1,0 +1,52 @@
+[
+    {
+        "tgid": "31665",
+        "tgname": "TGIF The Mothership",
+        "keyups": 3905
+    },
+    {
+        "tgid": "72424",
+        "tgname": "CHAT BR",
+        "keyups": 2092
+    },
+    {
+        "tgid": "30236",
+        "tgname": "Texas Chat",
+        "keyups": 1429
+    },
+    {
+        "tgid": "556",
+        "tgname": "ARFCOMM",
+        "keyups": 1336
+    },
+    {
+        "tgid": "85000",
+        "tgname": "Ham Link ARC",
+        "keyups": 1316
+    },
+    {
+        "tgid": "314255",
+        "tgname": "MUDDUCKS",
+        "keyups": 1157
+    },
+    {
+        "tgid": "5963",
+        "tgname": "TG5963",
+        "keyups": 1117
+    },
+    {
+        "tgid": "168",
+        "tgname": "Owariasahi Aichi DMR digipeater (i-ro-ha)",
+        "keyups": 917
+    },
+    {
+        "tgid": "27520",
+        "tgname": "NC Rippin Lips ",
+        "keyups": 894
+    },
+    {
+        "tgid": "335",
+        "tgname": "Roach Radio",
+        "keyups": 889
+    }
+]

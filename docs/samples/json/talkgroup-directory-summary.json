@@ -1,0 +1,234 @@
+{
+  "count": 3045,
+  "fields": {
+    "id": 3045,
+    "name": 3045,
+    "website": 3045,
+    "description": 3045
+  },
+  "uniqueIds": 3045,
+  "duplicateIds": [],
+  "duplicateNames": [
+    [
+      "dragon dragon dragon",
+      2
+    ],
+    [
+      "testing/experimentation",
+      2
+    ],
+    [
+      "ham radio society of catalonia",
+      2
+    ],
+    [
+      "8075amc",
+      4
+    ],
+    [
+      "drones",
+      2
+    ],
+    [
+      "qrv73",
+      2
+    ],
+    [
+      "tennessee",
+      2
+    ],
+    [
+      "north florida amateur radio",
+      2
+    ],
+    [
+      "xe1jmb",
+      2
+    ],
+    [
+      "hong kong",
+      2
+    ],
+    [
+      "the canada hub",
+      2
+    ],
+    [
+      "hatcho repeater packet club",
+      2
+    ],
+    [
+      "arsb",
+      2
+    ],
+    [
+      "cajun rag chew",
+      2
+    ],
+    [
+      "uruguay.net",
+      2
+    ],
+    [
+      "lgbt chat",
+      2
+    ],
+    [
+      "wadayama",
+      2
+    ],
+    [
+      "sv2snh",
+      10
+    ],
+    [
+      "e701bff",
+      2
+    ],
+    [
+      "ras sardegna mp",
+      2
+    ]
+  ],
+  "missingWebsite": 2051,
+  "placeholderWebsite": 131,
+  "withWebsite": 863,
+  "descriptionBase64Decodable": 2888,
+  "descriptionHtmlLike": 925,
+  "descriptionNonAscii": 313,
+  "examples": {
+    "decodedDescription": [
+      {
+        "id": "101",
+        "name": "Tac-101",
+        "decoded": "For everyone"
+      },
+      {
+        "id": "102",
+        "name": "Tac-102",
+        "decoded": "Tac 102 is for everyone to be used"
+      },
+      {
+        "id": "103",
+        "name": "Tac 103",
+        "decoded": "Open for everyone to use.&nbsp;Ragchew as long as you like."
+      },
+      {
+        "id": "104",
+        "name": "Tac-104",
+        "decoded": "Tac 104 can be used by everyone"
+      },
+      {
+        "id": "105",
+        "name": "Tac-105",
+        "decoded": "Tac 105 can be used by everyone"
+      }
+    ],
+    "htmlDescription": [
+      {
+        "id": "103",
+        "name": "Tac 103",
+        "decoded": "Open for everyone to use.&nbsp;Ragchew as long as you like."
+      },
+      {
+        "id": "116",
+        "name": "United Kingdom",
+        "decoded": "This we believe was the first UK channel on TGIF, We have no idea who originally set it up but all are welcome to use the channel.<div><div><div><br></div><div>PLEASE NOTE ON THE 16TH JULY 2021 THE LEGACY passw0rd WILL BE TURNED OFF.&nbsp;&"
+      },
+      {
+        "id": "117",
+        "name": "THE HF/MESHTASTIC MASH",
+        "decoded": "<div><p>Welcome to Talk group 117!</p>\n<p>This talk group is focused on **Meshtastic** and **HF-related discussions**.</p>\n<p>What we talk about:\n- Meshtastic nodes, firmware, Raspberry Pi setups, LoRa hardware, antennas, solar/repeater bui"
+      },
+      {
+        "id": "118",
+        "name": "LUSOFONA (Echolink)",
+        "decoded": "Bem-vindo à Conferência Lusófona da Liga de Amadores de Rádio Transmissões - LART.<div>Bridge permanente entre TG118 (TGIF) e a Conferência Lusófona (Echolink)</div>"
+      },
+      {
+        "id": "119",
+        "name": "The Complaint Department",
+        "decoded": "<div><font size=\"3\"><br></font></div><font size=\"3\">A place where Amateurs can come to complain about anything. For many people this is an enjoyable activity. It also offers groups a place to suggest&nbsp;Hams go to if their in a dispute wi"
+      }
+    ],
+    "nonAsciiDescription": [
+      {
+        "id": "117",
+        "name": "THE HF/MESHTASTIC MASH",
+        "decoded": "<div><p>Welcome to Talk group 117!</p>\n<p>This talk group is focused on **Meshtastic** and **HF-related discussions**.</p>\n<p>What we talk about:\n- Meshtastic nodes, firmware, Raspberry Pi setups, LoRa hardware, antennas, solar/repeater bui"
+      },
+      {
+        "id": "118",
+        "name": "LUSOFONA (Echolink)",
+        "decoded": "Bem-vindo à Conferência Lusófona da Liga de Amadores de Rádio Transmissões - LART.<div>Bridge permanente entre TG118 (TGIF) e a Conferência Lusófona (Echolink)</div>"
+      },
+      {
+        "id": "130",
+        "name": "TGIF SKYWARN",
+        "decoded": "<table width=\"100%\" border=\"0\" align=\"center\" style=\"height:201px;\"><tbody><tr bgcolor=\"#3B4C60\"><td width=\"70%\" height=\"195\" valign=\"top\"><h4 style=\"text-align:center;\"><font face=\"verdana\" size=\"4\"><i><span style=\"color:rgb(255,255,0);bac"
+      },
+      {
+        "id": "131",
+        "name": "Pirate Signal Broadcasting",
+        "decoded": "<h1 style=\"text-align:center;\"></h1><table width=\"85%\" border=\"0\" align=\"center\" style=\"text-align:center;height:290px;\"><tbody><tr><td height=\"286\" align=\"center\" valign=\"top\"><div align=\"center\">\n  <h1 style=\"text-align:center;\"><a href=\""
+      },
+      {
+        "id": "149",
+        "name": "XLX149 Thailand",
+        "decoded": "ฺฺ<span style=\"color:rgb(255,255,0);background-color:rgb(0,0,0);font-family:calibri, verdana, arial, 'comic sans';font-size:medium;\">Bridged&nbsp;</span>XLX149&nbsp;<u style=\"background-color:rgb(0,0,0);font-family:calibri, verdana, arial, "
+      }
+    ],
+    "placeholderWebsite": [
+      {
+        "id": "101",
+        "name": "Tac-101",
+        "website": "https:// "
+      },
+      {
+        "id": "115",
+        "name": "HAM BAND HOOK UP",
+        "website": "https:// "
+      },
+      {
+        "id": "116",
+        "name": "United Kingdom",
+        "website": "https://"
+      },
+      {
+        "id": "119",
+        "name": "The Complaint Department",
+        "website": "https:// "
+      },
+      {
+        "id": "120",
+        "name": "N4LLC Allstar HUB",
+        "website": "https:// "
+      },
+      {
+        "id": "123",
+        "name": "Trucker Talk",
+        "website": "https:// "
+      },
+      {
+        "id": "132",
+        "name": "Connecticut",
+        "website": "https:// "
+      },
+      {
+        "id": "135",
+        "name": "Northern New Mexico",
+        "website": "https:// "
+      },
+      {
+        "id": "139",
+        "name": "Kingman Arizona",
+        "website": "https:// "
+      },
+      {
+        "id": "142",
+        "name": "W6MDA Talk Group",
+        "website": "https:// "
+      }
+    ]
+  }
+}
