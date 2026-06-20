@@ -22,7 +22,6 @@ src-tauri/icons/
 
 # Rust
 target/
-Cargo.lock
 
 # IDE / editor
 .vscode/
