@@ -77,6 +77,7 @@ export function App() {
           <StatusPill label={monitor.connection.message} active={monitor.connection.connected} />
           <Metric label="Conversations" value={conversationCount} />
           <Metric label="Active TGs" value={activeCount} />
+          <Metric label="Suppressed" value={monitor.suppressedEventCount} muted />
           <Metric label="Malformed" value={monitor.malformedCount} muted />
           <button className="icon-button" type="button" title="Reconnect" onClick={monitor.reconnect}>
             <RefreshCw size={18} aria-hidden />

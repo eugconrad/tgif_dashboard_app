@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { LocalCache } from '../domain/tgif/cache';
 import { ConversationEngine } from '../domain/tgif/conversationEngine';
 import { TgifMetadataClient } from '../domain/tgif/endpoints';
+import { ActivityEventFilter } from '../domain/tgif/eventFilter';
 import { TgifLiveClient } from '../domain/tgif/liveClient';
 import type {
   ActiveTalkgroupState,
@@ -24,6 +25,7 @@ const initialConnection: ConnectionStatus = {
 
 export function useTgifMonitor() {
   const engineRef = useRef(new ConversationEngine());
+  const eventFilterRef = useRef(new ActivityEventFilter());
   const metadataRef = useRef(new TgifMetadataClient());
   const preferencesRef = useRef(new LocalCache('tgif-monitor-preferences'));
   const [connection, setConnection] = useState<ConnectionStatus>(initialConnection);
@@ -38,6 +40,7 @@ export function useTgifMonitor() {
   const [stats, setStats] = useState<TalkgroupStatsRow[]>([]);
   const [callsigns, setCallsigns] = useState<Record<number, CallsignLookup | null>>({});
   const [malformedCount, setMalformedCount] = useState(0);
+  const [suppressedEventCount, setSuppressedEventCount] = useState(0);
 
   const liveClientRef = useRef<TgifLiveClient | null>(null);
 
@@ -46,10 +49,17 @@ export function useTgifMonitor() {
       onStatus: setConnection,
       onEvents: (events) => {
         if (!events.length) return;
-        for (const event of events) {
+
+        const { accepted, suppressed } = eventFilterRef.current.filter(events);
+        if (suppressed) {
+          setSuppressedEventCount((count) => count + suppressed);
+        }
+        if (!accepted.length) return;
+
+        for (const event of accepted) {
           engineRef.current.ingest(event);
         }
-        setRecentEvents((current) => [...events, ...current].slice(0, 150));
+        setRecentEvents((current) => [...accepted, ...current].slice(0, 150));
         setTalkgroups(engineRef.current.getStates());
       },
       onMalformed: () => setMalformedCount((count) => count + 1)
@@ -142,6 +152,7 @@ export function useTgifMonitor() {
     statsByTalkgroup,
     callsigns,
     malformedCount,
+    suppressedEventCount,
     reconnect,
     toggleFavorite,
     loadProfile,

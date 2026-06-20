@@ -22,6 +22,7 @@ const initialStatus: ConnectionStatus = {
 export class TgifLiveClient {
   private socket: Socket | null = null;
   private status: ConnectionStatus = initialStatus;
+  private backlogRequested = false;
 
   constructor(private readonly handlers: TgifLiveClientHandlers) {}
 
@@ -60,6 +61,7 @@ export class TgifLiveClient {
 
   private bindSocket(socket: Socket) {
     socket.on('connect', () => {
+      this.backlogRequested = false;
       this.setStatus({
         phase: 'handshaking',
         connected: true,
@@ -72,6 +74,17 @@ export class TgifLiveClient {
 
     socket.on('status', (payload: unknown) => {
       if (payload === 200) {
+        if (this.backlogRequested) {
+          this.setStatus({
+            phase: this.status.phase === 'live' ? 'live' : 'authorized',
+            connected: true,
+            message: this.status.phase === 'live' ? 'Live' : 'Authorized',
+            error: null
+          });
+          return;
+        }
+
+        this.backlogRequested = true;
         this.setStatus({
           phase: 'backlog-loading',
           connected: true,
@@ -122,6 +135,7 @@ export class TgifLiveClient {
     });
 
     socket.on('disconnect', (reason: string) => {
+      this.backlogRequested = false;
       this.setStatus({
         phase: 'reconnecting',
         connected: false,
@@ -152,6 +166,7 @@ export class TgifLiveClient {
     });
 
     socket.on('reconnect', () => {
+      this.backlogRequested = false;
       this.setStatus({
         phase: 'handshaking',
         connected: true,

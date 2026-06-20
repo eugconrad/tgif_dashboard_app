@@ -32,6 +32,7 @@ Implemented from `docs/protocol.md`, `docs/research/websocket.md`, and `docs/res
 - Handles `lastheard_backlog`.
 - Handles live `lastheard`.
 - Handles disconnect, reconnect, connect errors, malformed payloads, and manual reconnect.
+- Suppresses duplicate live/backlog events, repeated stream updates, and short-window repeated TX updates from the same participant before they reach the Activity Log or conversation engine.
 
 Implemented from `docs/research/data-model.md`:
 
@@ -102,6 +103,7 @@ Tests cover:
 - `lastheard` normalization.
 - `repeater_id == 0` stop event handling.
 - Backlog normalization.
+- Duplicate and repeated-update suppression.
 - Conversation detection with multiple callsigns.
 - Single-station activity not being classified as a conversation.
 - Stale retention expiry.
