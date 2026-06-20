@@ -12,9 +12,9 @@ TGIF Dashboard App is a planned modern cross-platform desktop monitoring client 
 
 ## Current Status
 
-Research complete. Application implementation has not started.
+Research complete. First MVP implementation is now in place.
 
-The repository currently contains protocol analysis, endpoint documentation, sample HTML/JavaScript/JSON/WebSocket captures, data model proposals, and architecture notes. These documents are intended to be sufficient for a developer to implement the first protocol client without reverse engineering TGIF Network again.
+The repository contains protocol analysis, endpoint documentation, sample HTML/JavaScript/JSON/WebSocket captures, data model proposals, architecture notes, and a working TypeScript/Tauri-ready MVP dashboard.
 
 ## Roadmap
 
@@ -26,6 +26,7 @@ The repository currently contains protocol analysis, endpoint documentation, sam
 - Add favorites, notifications, local history, and offline metadata support.
 
 See [docs/roadmap.md](docs/roadmap.md) for the detailed research-driven roadmap.
+See [docs/mvp.md](docs/mvp.md) for the current implementation status.
 
 ## Architecture Overview
 
@@ -48,6 +49,7 @@ See [docs/architecture.md](docs/architecture.md) for responsibilities and diagra
 
 - [Protocol specification](docs/protocol.md)
 - [Architecture proposal](docs/architecture.md)
+- [MVP implementation notes](docs/mvp.md)
 - [Roadmap](docs/roadmap.md)
 - [Research index](docs/research/)
 - [Original research summary](docs/tgif-research.md)
@@ -70,12 +72,40 @@ Screenshots will be added after the first application UI exists.
 
 ## Development Setup
 
-Development setup is intentionally pending until the initial Tauri + TypeScript project is generated.
+Install dependencies:
 
-Expected future prerequisites:
+```bash
+npm install
+```
+
+Run the web development UI:
+
+```bash
+npm run dev
+```
+
+Run tests:
+
+```bash
+npm test
+```
+
+Build the web app:
+
+```bash
+npm run build
+```
+
+Run the Tauri desktop shell:
+
+```bash
+npm run tauri:dev
+```
+
+Prerequisites:
 
 - Node.js
-- pnpm or npm
+- npm
 - Rust toolchain
 - Tauri prerequisites for the target operating system
 
