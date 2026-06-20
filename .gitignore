@@ -1,0 +1,74 @@
+# Node / package managers
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+.pnpm-store/
+
+# Build output
+dist/
+build/
+coverage/
+.nyc_output/
+.vite/
+.turbo/
+
+# Tauri
+src-tauri/target/
+src-tauri/gen/
+src-tauri/icons/
+
+# Rust
+target/
+Cargo.lock
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+.tmp/
+.temp/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Test / cache
+.cache/
+.parcel-cache/
+.eslintcache
+*.tsbuildinfo
+
+# Generated reports
+playwright-report/
+test-results/
+
+# Local app data
+*.local
+*.sqlite
+*.sqlite3
+*.db
